@@ -447,6 +447,20 @@ div.recent_posts {
 	margin-bottom: 3rem;
 }
 
+div.archives section h2, div.archives section p {
+	margin: 0;
+}
+
+div#archive-months, div#archive-categories {
+	width: 100%;
+}
+
+div#archive-months li, div#archive-categories li {
+	float: left;
+	width: 13rem;
+	list-style: none;
+}
+
 /*
  *
  * Calendar icons in CSS, cheers Chris Spooner!: http://line25.com/tutorials/how-to-create-a-cool-blog-post-date-icon-with-css

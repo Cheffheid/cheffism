@@ -6,11 +6,13 @@
 ?>
 
 <?php /* Start the Loop */ 
-/* Grab and show the excerpt of the first two posts */
+/* Grab and show the excerpt of the first two posts if it's the homepage */
 
-$top_query = new WP_Query('showposts=2');
+if ( is_home() ):
+	$wp_query = new WP_Query('showposts=2');
+endif;
 
-while ( $top_query->have_posts() ) : $top_query->the_post(); ?>
+while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 		<header class="entry-header">
@@ -45,7 +47,15 @@ while ( $top_query->have_posts() ) : $top_query->the_post(); ?>
 
 	<?php comments_template( '', true ); ?>
 
-<?php endwhile; ?>
+<?php endwhile; 
+
+/** Only show recent post list on homepage **/
+
+if ( is_home() ):
+
+?>
+
+
 
 <div class="recent_posts">
 	<h2 class="title"><?php _e('<!--:en-->Other "recent" posts<!--:--><!--:nl-->Andere "recente" posts<!--:-->');?></h3>
@@ -59,7 +69,12 @@ while ( $list_query->have_posts() ) : $list_query->the_post();
 	echo '<div class="recent_post"><div class="recent_posts_date">' . get_the_date() . '</div><div class="recent_posts_title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></div><div class="clear"></div></div>';
 	comments_template( '', true );
 
-endwhile; ?>
+endwhile; 
+
+endif;
+?>
+
+
 	
 </div>
 
