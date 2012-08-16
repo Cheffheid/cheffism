@@ -32,7 +32,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'themename' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'cheffism' ), max( $paged, $page ) );
 
 	?></title>
 	<meta name="description" content="">
@@ -75,7 +75,7 @@
 				*/ ?>
 	
 				<nav id="access" role="article">
-					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
+					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					<?php langlist(); ?>
 				</nav><!-- #access -->

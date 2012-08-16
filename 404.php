@@ -11,7 +11,7 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found" role="article">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oh dear...', 'themename' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Oh dear...', 'cheffism' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
@@ -39,7 +39,7 @@ get_header(); ?>
 					</section>
 
 					<section id="archive-categories">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'themename' ); ?></h2>
+						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'cheffism' ); ?></h2>
 						<ul>
 							<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
 						</ul>

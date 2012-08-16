@@ -8,7 +8,7 @@
  * Make theme available for translation
  * Translations can be filed in the /languages/ directory
  */
-load_theme_textdomain( 'themename', get_template_directory() . '/languages' );
+load_theme_textdomain( 'cheffism', get_template_directory() . '/languages' );
 
 $locale = get_locale();
 $locale_file = get_template_directory() . "/languages/$locale.php";
@@ -84,9 +84,9 @@ add_action('admin_init','customize_meta_boxes');
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
  */
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'themename' ),
-	'footer' => __( 'Footer Menu', 'themename' ),
-	'utility' => __( 'Utility Menu', 'themename' )
+	'primary' => __( 'Primary Menu', 'cheffism' ),
+	'footer' => __( 'Footer Menu', 'cheffism' ),
+	'utility' => __( 'Utility Menu', 'cheffism' )
 ) );
 
 /** 
@@ -144,7 +144,7 @@ add_filter('admin_bar_menu', 'admin_bar_replace_howdy', 25);
  */
 function handcraftedwp_widgets_init() {
 	register_sidebar( array (
-		'name' => __( 'Sidebar', 'themename' ),
+		'name' => __( 'Sidebar', 'cheffism' ),
 		'id' => 'sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
 		'after_widget' => "</aside>",
