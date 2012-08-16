@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<section id="primary" role="region">
+		<div id="primary">
 			<div id="content" class="archives">
 
 				<article>
@@ -69,6 +69,6 @@ get_header(); ?>
 				<?php endif; ?>
 				
 			</div><!-- #content -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 
 <?php get_footer(); ?>

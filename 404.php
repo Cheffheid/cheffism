@@ -24,38 +24,30 @@ get_header(); ?>
 						Wellicht dat zoeken, of een van de links hieronder, je kunnen helpen om uit dit zwarte gat van de ondergang te komen.
 						Tenzij ik iets stuk heb gemaakt, dan sta je er alleen voor(En je zou me dit moeten laten weten :))</p>
 					<?php endif; ?>
-				
-					<section>
-						<div id="search-archives">
-							<?php get_search_form(); ?>
-						</div>
-					</section>
+
+					<div id="archive-search">
+						<?php get_search_form(); ?>
+					</div>
 					
 					<section>
 						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 					</section>
 					
-					<section>
-						<div id="archive-months">
-							<?php the_widget( 'WP_Widget_Archives', 'show_post_count=true', "after_title=</h2>" ); ?>
-							<div class="clear"></div>
-						</div>						
+					<section id="archive-months">
+						<?php the_widget( 'WP_Widget_Archives', 'show_post_count=true', "after_title=</h2>" ); ?>
+						<div class="clear"></div>
 					</section>
 
-					<section>
-						<div id="archive-categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'themename' ); ?></h2>
-							<ul>
-								<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
-							</ul>
-							<div class="clear"></div>
-						</div>
+					<section id="archive-categories">
+						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'themename' ); ?></h2>
+						<ul>
+							<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
+						</ul>
+						<div class="clear"></div>
 					</section>
 					
-					<section>
-						<div id="archive-tags">
-							<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-						</div>				
+					<section id="archive-tags">
+						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 					</section>
 
 				</div><!-- .entry-content -->
