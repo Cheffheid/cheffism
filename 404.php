@@ -34,7 +34,7 @@ get_header(); ?>
 					</section>
 					
 					<section id="archive-months">
-						<?php the_widget( 'WP_Widget_Archives', 'show_post_count=true', "after_title=</h2>" ); ?>
+						<?php the_widget( 'WP_Widget_Archives', 'count=true', "after_title=</h2>" ); ?>
 						<div class="clear"></div>
 					</section>
 
@@ -45,11 +45,6 @@ get_header(); ?>
 						</ul>
 						<div class="clear"></div>
 					</section>
-					
-					<section id="archive-tags">
-						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-					</section>
-
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 
