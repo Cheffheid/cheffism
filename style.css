@@ -443,7 +443,7 @@ div.recent_posts {
 	float: left;
 }
 
-.page-template-archive-php section {
+.error404 section, .page-template-archive-php section {
 	margin-bottom: 3rem;
 }
 
@@ -453,12 +453,18 @@ div.archives section h2, div.archives section p {
 
 div#archive-months, div#archive-categories {
 	width: 100%;
+	overflow: auto;
 }
 
 div#archive-months li, div#archive-categories li {
 	float: left;
 	width: 13rem;
 	list-style: none;
+}
+
+div#archive-months ul, div#archive-categories ul {
+	margin-left: 0;
+	overflow: auto;
 }
 
 /*

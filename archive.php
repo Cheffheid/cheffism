@@ -31,7 +31,9 @@ get_header(); ?>
 							<p>Bekijk m'n spul per maand.</p>
 						<?php endif; ?>
 						<div id="archive-months">
-							<?php wp_get_archives('show_post_count=true'); ?>
+							<ul>
+								<?php wp_get_archives('show_post_count=true'); ?>
+							</ul>
 							<div class="clear"></div>
 						</div>
 					</section>
@@ -44,7 +46,9 @@ get_header(); ?>
 							<p>Of, blader door de onderwerpen als je dat liever doet.</p>
 						<?php endif; ?>
 						<div id="archive-categories">
-							<?php wp_list_categories('show_count=1&title_li='); ?>
+							<ul>
+								<?php wp_list_categories('show_count=1&title_li='); ?>
+							</ul>
 							<div class="clear"></div>
 						</div>
 					</section>
