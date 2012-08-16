@@ -33,11 +33,11 @@ function handcraftedwp_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'cheffism' ), get_comment_date(),  get_comment_time() ); ?>
-					</time></a>
+					</time>
 					<?php edit_comment_link( __( '(Edit)', 'cheffism' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
@@ -123,6 +123,10 @@ endif; // ends check for handcraftedwp_comment()
 
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+		$comment_args = array (
+			'comment_notes_after' => ''
+		);
+		comment_form($comment_args); ?>
 
 </div><!-- #comments -->
