@@ -64,6 +64,9 @@ body, select, input, textarea {
   /* set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */   
 }
+body {
+	background: #F7F7F7;
+}
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
@@ -71,7 +74,8 @@ h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
-a, a:active, a:visited { color: #607890; }
+a, a:active, a:visited { color: #333333; font-weight: bold; }
+nav a, nav a:active, nav a:visited { font-weight: normal; }
 a:hover { color: #036; }
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
