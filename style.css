@@ -66,6 +66,8 @@ body, select, input, textarea {
 }
 body {
 	background: #F7F7F7;
+	overflow:hidden;
+	max-width: 53.5rem;
 }
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
@@ -186,7 +188,6 @@ a, a:hover {
 body {
 	margin: 0 auto;
 	padding: 1rem 3rem 3rem 3rem;
-	max-width: 52.5rem;
 }
 
 p {
@@ -252,11 +253,6 @@ p {
  * Header
  *
  */
- 
-header {
-	margin: 2em 0;
-}
-
 hgroup {
 	float: left;
 	width: 100%;
@@ -280,7 +276,7 @@ hgroup {
 	float: left;
 	height: 100%;
 	padding: 0 0 0 1rem;
-	width: 65%;
+	width: 35rem;
 }
 
 /*
@@ -390,9 +386,6 @@ body.home div.footer-blocks, div.home-blocks {
 	padding: 1rem;
 }
 
-body.home header {
-	margin: 0;
-}
 
 
 
@@ -698,35 +691,87 @@ div.cannon-fodder span.border-stuff { width: auto; display: inline-block; } /* F
  * These follow after primary styles so they will successfully override. 
  *
  */
-@media all and (orientation:portrait) { 
-  /* Style adjustments for portrait mode goes here */
-  	iframe {
-		width: 450px;
-	}
-	
-	.recent_posts_title {
-		width: 17em;
-	}
-	
-	div.recent_post {
-		width: 30em;
-	}
-	
-	div.home-block, div.footer-block {
-		padding-right: 2rem;
-		width: 40%;
-	}
-}
-@media all and (orientation:landscape) { 
-  /* Style adjustments for landscape mode goes here */
-}
-/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
-   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-@media screen and (max-device-width: 480px) {  
-  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
-     j.mp/textsizeadjust 
-  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
 	body {
-		max-width: 34rem;
+		padding: 1rem 0;
+	}
+	
+	#site-description, #access {
+		padding: 0;
+	}
+	
+	#access, div.home-block, div.footer-block, #menu-footer {
+		width: auto;
+	}
+	
+	/* Re-assigning this block to the left, because it won't fit on the right */
+	div.right {
+		float: left;
+		text-align: left;
+	}
+	
+	hgroup {
+		padding-left: 5px;
+	}
+	
+	/* additional padding for the last child to even out the bottom part of the nav on smaller screens */
+	ul#menu-primary li:last-child {
+		padding-left: 35px;
+	}
+	
+	/* For YouTube embeds */
+	iframe {
+		width: 300px;
+		height: 168px;
+	}
+	
+	div#comments, footer, div#content {
+		width: 300px;
+		padding: 0 10px;
+	}
+	
+	footer .footer-block a {
+		display: block;
+		width: 100%;
+	}
+	
+	body.home div.footer-blocks, div.home-blocks {
+		padding: 0 10px;
+	}
+	
+	.home-most-recent {
+		padding: 10px 10px;
+	}
+}
+ 
+
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) and (max-width : 650px) {
+/* Styles */
+	#access, div.home-block, div.footer-block, #menu-footer {
+		width: auto;
+	}
+
+	body {
+		padding: 1rem 1.5rem;
+	}
+	
+	#site-description, #access {
+		padding: 0;
+	}
+	
+	ul#change_language {
+		padding-left: 9px;
+	}
+	
+	/* For YouTube embeds */
+	iframe {
+		width: 490px;
+		height: 278px;
 	}
 }
