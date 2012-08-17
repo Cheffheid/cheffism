@@ -13,7 +13,12 @@ get_header(); ?>
 
 				<article>
 					<header class="page-header">
-						<h1 class="page-title">Archives</h1>
+						<?php if (qtrans_getLanguage() == 'en') : ?>
+							<h1 class="page-title">Archives</h1>
+						<?php else : ?>
+							<h1 class="page-title">Archieven</h1>
+						<?php endif; ?>
+						
 					</header>
 					
 					<?php if( is_month() ) : ?>
