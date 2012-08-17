@@ -30,15 +30,10 @@ get_header(); ?>
 						</article><!-- #post-<?php the_ID(); ?> -->
 					<?php endwhile; ?>
 				</div>
-				<?php 
-					
+				<?php
 					$frontpage_id = get_option('page_on_front');
-					$frontpage = get_page( $frontpage_id );
-					
-					$content = $frontpage->post_content;
-					$content = apply_filters('the_content', $content);
-					$content = str_replace(']]>', ']]>', $content);
-					echo $content;
+					setup_postdata(get_page($frontpage_id));
+					the_content();
 				?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
