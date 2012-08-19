@@ -33,7 +33,7 @@ function handcraftedwp_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
-					<time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<time datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'cheffism' ), get_comment_date(),  get_comment_time() ); ?>
