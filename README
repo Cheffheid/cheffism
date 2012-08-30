@@ -2,7 +2,12 @@
 
 ## Changelog
 
-### v 0.2.0 : August 16th, 2012
+### v 0.2.1 : August 30th, 2012
+
+## Recent changes (0.2.1)
+
+1. Cleaned up HTML a bit by removing unnecessary divs and applying clearfix properly on the homepage, archives and 404
+2. Updated style.css and added normalizer.min.css with HTML5 boilerplate 4.0
 
 ## Recent changes (0.2.0)
 
