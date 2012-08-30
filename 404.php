@@ -33,17 +33,15 @@ get_header(); ?>
 						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 					</section>
 					
-					<section id="archive-months">
+					<section id="archive-months" class="clearfix">
 						<?php the_widget( 'WP_Widget_Archives', 'count=true', "after_title=</h2>" ); ?>
-						<div class="clear"></div>
 					</section>
 
-					<section id="archive-categories">
+					<section id="archive-categories" class="clearfix">
 						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'cheffism' ); ?></h2>
 						<ul>
 							<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
 						</ul>
-						<div class="clear"></div>
 					</section>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
