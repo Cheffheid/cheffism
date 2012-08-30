@@ -27,7 +27,7 @@ get_header(); ?>
 					
 					<?php else : ?>
 
-					<section>
+					<section id="archive-months" class="clearfix">
 						<?php if (qtrans_getLanguage() == 'en') : ?>
 							<h2>Browse monthly</h2>
 							<p>Browse through my stuff by month.</p>
@@ -35,14 +35,11 @@ get_header(); ?>
 							<h2>Per maand bladeren</h2>
 							<p>Bekijk m'n spul per maand.</p>
 						<?php endif; ?>
-						<div id="archive-months">
-							<ul>
-								<?php wp_get_archives('show_post_count=true'); ?>
-							</ul>
-							<div class="clear"></div>
-						</div>
+						<ul>
+							<?php wp_get_archives('show_post_count=true'); ?>
+						</ul>
 					</section>
-					<section>
+					<section id="archive-categories" class="clearfix">
 						<?php if (qtrans_getLanguage() == 'en') : ?>
 							<h2>Browse categories</h2>
 							<p>Or, browse through the categories if you prefer that.</p>
@@ -50,15 +47,11 @@ get_header(); ?>
 							<h2>Per onderwerp bladeren</h2>
 							<p>Of, blader door de onderwerpen als je dat liever doet.</p>
 						<?php endif; ?>
-						<div id="archive-categories">
-							<ul>
-								<?php wp_list_categories('show_count=1&title_li='); ?>
-							</ul>
-							<div class="clear"></div>
-						</div>
+						<ul>
+							<?php wp_list_categories('show_count=1&title_li='); ?>
+						</ul>
 					</section>
-					<section>
-						<div id="search-archives">
+					<section id="search-archives">
 						<?php if (qtrans_getLanguage() == 'en') : ?>
 							<h2>Search for stuff</h2>
 							<p>Or, just search for things with a keyword or two.</p>
@@ -67,7 +60,6 @@ get_header(); ?>
 							<p>Of, zoek naar artikelen met een zoekwoord of twee.</p>
 						<?php endif; ?>
 							<?php get_search_form(); ?>
-						</div>
 					</section>
 				</article>
 

@@ -23,19 +23,17 @@
 			<div class="calendar">
 				<p><?php echo get_the_date( 'd' ); ?> <span><?php echo get_the_date( 'M' ); ?></span></p>
 			</div>
-			<div class="post-info">
-				<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cheffism' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-					<div class="entry-meta">
-					<?php
-						printf( __( '<span class="sep">Posted by </span> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>', 'cheffism' ),
-							get_author_posts_url( get_the_author_meta( 'ID' ) ),
-							sprintf( esc_attr__( 'View all posts by %s', 'cheffism' ), get_the_author() ),
-							get_the_author()
-						);
-					?>
-					<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'in ', 'cheffism' ); ?></span><?php the_category( ', ' ); ?></span>
-				</div><!-- .entry-meta -->
-			</div><!-- .post-info -->
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cheffism' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<div class="entry-meta">
+				<?php
+					printf( __( '<span class="sep">Posted by </span> <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>', 'cheffism' ),
+						get_author_posts_url( get_the_author_meta( 'ID' ) ),
+						sprintf( esc_attr__( 'View all posts by %s', 'cheffism' ), get_the_author() ),
+						get_the_author()
+					);
+				?>
+				<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'in ', 'cheffism' ); ?></span><?php the_category( ', ' ); ?></span>
+			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
 		<div class="entry-summary">

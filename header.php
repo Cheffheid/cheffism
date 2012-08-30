@@ -35,8 +35,13 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'cheffism' ), max( $paged, $page ) );
 
 	?></title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="description" content="<?php if ( is_single() ) {
+        single_post_title('', true); 
+    } else {
+        bloginfo('name'); echo " - "; bloginfo('description');
+    }
+    ?>">
+	<meta name="author" content="Jeffrey de Wit">
 	<!--  Mobile Viewport Fix -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -48,7 +53,8 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-ipad3.png">	<!--144X144-->	
 	
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/normalize.min.css" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" />
 
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -67,25 +73,17 @@
 	
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed">
-		<header id="branding" role="banner">
-				<hgroup>
-					<h1 id="site-title"><span><?php if ( !is_home() || !is_front_page() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php } ?><?php bloginfo( 'name' ); ?><?php if ( !is_home() || !is_front_page() ) { ?></a><?php } ?></span></h1>
-					<h2 id="site-description"><em><?php bloginfo( 'description' ); ?></em></h2>
-				</hgroup>
-				
-				<?php /*
-				<nav id="utility" role="article">
-					<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
-				</nav><!-- #utility -->
-				*/ ?>
+		<header id="branding" class="clearfix" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><?php if ( !is_home() || !is_front_page() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php } ?><?php bloginfo( 'name' ); ?><?php if ( !is_home() || !is_front_page() ) { ?></a><?php } ?></span></h1>
+				<h2 id="site-description"><em><?php bloginfo( 'description' ); ?></em></h2>
+			</hgroup>
 	
-				<nav id="access" role="navigation">
-					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					<?php langlist(); ?>
-				</nav><!-- #access -->
-				<div class="clear"></div>
+			<nav id="access" role="navigation">
+				<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php langlist(); ?>
+			</nav><!-- #access -->
 		</header><!-- #branding -->
-	
 	
 		<div id="main">

@@ -10,7 +10,7 @@ get_header(); ?>
 
 		<div id="primary">
 			<div id="content">
-				<div class="home-most-recent">
+				<div class="home-most-recent clearfix">
 					<?php
 					/* Grab and show the excerpt of the first two posts */
 					$top_query = new WP_Query('showposts=1');
@@ -19,11 +19,8 @@ get_header(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 							<header class="entry-header">
-								<div class="post-info">
-									<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cheffism' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-								</div><!-- .post-info -->
+								<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cheffism' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							</header><!-- .entry-header -->
-
 							<div class="entry-summary">
 								<?php the_excerpt(); ?>
 							</div><!-- .entry-summary -->
