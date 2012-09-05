@@ -604,11 +604,6 @@ ol.commentlist li.pingback { border-bottom:1px dotted #666; padding:1em; }
  * Footer
  *
  */
-
- #colophon {
-	margin-top: 2.5rem;
- }
- 
 #menu-footer {
 	list-style: none;
 	padding: 0; margin: 0;
