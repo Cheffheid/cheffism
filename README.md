@@ -1,4 +1,0 @@
-cheffism
-========
-
-Cheffism wordpress theme
