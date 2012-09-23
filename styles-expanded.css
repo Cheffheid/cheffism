@@ -761,40 +761,34 @@ article.comment {
   display: block;
   line-height: 0;
   color: transparent;
-  height: 26px;
-  width: 26px;
+  height: 25px;
+  width: 25px;
+  background: url("images/sprites.png");
+  background-repeat: no-repeat;
 }
-
-#menu-footer li.twitter a {
-  background: url("images/twitter.png") no-repeat 0 -25px;
+#menu-footer .twitter a {
+  background-position: -100px -50px;
 }
-
-#menu-footer li.twitter a:hover {
-  background: url("images/twitter.png") no-repeat 0 1px;
+#menu-footer .twitter a:hover {
+  background-position: -100px 0;
 }
-
-#menu-footer li.linkedin a {
-  background: url("images/linkedin.png") no-repeat 0 -25px;
+#menu-footer .linkedin a {
+  background-position: 0 -52px;
 }
-
-#menu-footer li.linkedin a:hover {
-  background: url("images/linkedin.png") no-repeat 0 0px;
+#menu-footer .linkedin a:hover {
+  background-position: 0 0;
 }
-
-#menu-footer li.lastfm a {
-  background: url("images/lastfm.png") no-repeat 0 -25px;
+#menu-footer .lastfm a {
+  background-position: -50px -52px;
 }
-
-#menu-footer li.lastfm a:hover {
-  background: url("images/lastfm.png") no-repeat 0 0px;
+#menu-footer .lastfm a:hover {
+  background-position: -50px 0;
 }
-
-#menu-footer li.rss a {
-  background: url("images/rss.png") no-repeat 0 -25px;
+#menu-footer .rss a {
+  background-position: -150px -52px;
 }
-
-#menu-footer li.rss a:hover {
-  background: url("images/rss.png") no-repeat 0 0px;
+#menu-footer .rss a:hover {
+  background-position: -150px 0;
 }
 
 /*
