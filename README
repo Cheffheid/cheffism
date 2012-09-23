@@ -2,7 +2,13 @@
 
 ## Changelog
 
-### v 0.2.1 : August 30th, 2012
+### v 0.3 : September 23, 2012
+
+## Recent changes (0.3)
+
+1. Implemented SASS stylesheets
+2. Cleaned CSS up a little and minified it
+3. Combined icons to one sprite file
 
 ## Recent changes (0.2.1)
 
