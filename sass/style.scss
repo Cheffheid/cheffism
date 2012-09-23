@@ -1,11 +1,20 @@
+// Libraries
 @import "compass";
+
+// Wordpress theme header
 @import "partials/wpheader";
+
+// HTML5 Boilerplate styles
 @import "partials/html5bp";
+
+// Custom theme styles*
 @import "partials/style";
+
+// Media queries*
 @import "partials/mediaqueries";
+
+// Helper classes
 @import "partials/helpers";
+
+// Print styles
 @import "partials/print";
-
-
-
-
