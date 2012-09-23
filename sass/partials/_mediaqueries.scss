@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+	body {
+		padding: 1rem 0;
+	}
+	
+	#site-description, #access {
+		padding: 0;
+	}
+	
+	#access, div.home-block, div.footer-block, #menu-footer {
+		width: auto;
+	}
+	
+	/* Re-assigning this block to the left, because it won't fit on the right */
+	div.right {
+		float: left;
+		text-align: left;
+	}
+	
+	hgroup {
+		padding-left: 5px;
+	}
+	
+	/* additional padding for the last child to even out the bottom part of the nav on smaller screens */
+	ul#menu-primary li:last-child {
+		padding-left: 35px;
+	}
+	
+	/* For YouTube embeds */
+	iframe {
+		width: 300px;
+		height: 168px;
+	}
+	
+	div#comments, footer, div#content {
+		width: 300px;
+		padding: 0 10px;
+	}
+	
+	footer .footer-block a {
+		display: block;
+		width: 100%;
+	}
+	
+	body.home div.footer-blocks, div.home-blocks {
+		padding: 0 10px;
+	}
+	
+	.home-most-recent {
+		padding: 10px 10px;
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) and (max-width : 650px) {
+/* Styles */
+	#access, div.home-block, div.footer-block, #menu-footer {
+		width: auto;
+	}
+
+	body {
+		padding: 1rem 1.5rem;
+	}
+	
+	#site-description, #access {
+		padding: 0;
+	}
+	
+	ul#change_language {
+		padding-left: 9px;
+	}
+	
+	/* For YouTube embeds */
+	iframe {
+		width: 490px;
+		height: 278px;
+	}
+}
