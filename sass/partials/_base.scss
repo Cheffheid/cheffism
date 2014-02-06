@@ -1,0 +1,47 @@
+/*!
+	Theme Name: Cheffism
+	Theme URI: http://www.cheffism.com
+	Author: Jeffrey de Wit
+	Author URI: http://www.cheffism.com
+	Description: A theme based on the Handcrafted HTML5 Wordpress theme and customised to my needs for my website. 
+	Version: 0.4
+*/
+
+// Set colour variables
+$background-colour: #F7F7F7;
+$base-link-colour: #333333; // Note: also used for text-selection
+$link-highlight-colour: #1D92FF;
+$base-font-colour: #444444;
+$border-colour: #d2d2d2;
+$highlight-colour: #0A365F;
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+// Mixins
+
+// Prefixer mixin, adds browser vendor prefixes automatically
+// Defaults to webkit, moz and spec
+@mixin prefixer ($property, $value, $webkit: true, $moz: true, $ms: false, $o: false, $spec: true) {
+	@if $webkit { -webkit-#{$property}: $value; }
+	@if $moz    {    -moz-#{$property}: $value; }
+	@if $ms     {     -ms-#{$property}: $value; }
+	@if $o      {      -o-#{$property}: $value; }
+	@if $spec   {         #{$property}: $value; }
+}
+
+// Adds CSS3 box shadow
+@mixin shadow($inset, $h-shadow: 0px, $v-shadow: 0px, $blur: 15px, $colour: rgba(0,0,0,0.1)) {
+	@if $inset { @include prefixer(box-shadow, inset $h-shadow $v-shadow $blur $colour); }
+	@else { @include prefixer(box-shadow, $h-shadow $v-shadow $blur $colour); }
+}
+
+// Simple linear gradient mixin
+@mixin linear-gradient($angle: top, $from: #fff, $to: #000) {
+	background: $from;
+	background: linear-gradient($angle, $from, $to);
+	background: -moz-linear-gradient($angle, $from, $to);
+	background: -webkit-linear-gradient($angle, $from, $to);	
+}
+
+@import "compass/reset";

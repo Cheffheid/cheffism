@@ -1,0 +1,347 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheffism\n"
+"POT-Creation-Date: 2014-01-20 21:44-0500\n"
+"PO-Revision-Date: 2014-01-20 21:52-0500\n"
+"Last-Translator: \n"
+"Language-Team: Cheff\n"
+"Language: Nederlands\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:14
+msgid "Oh dear..."
+msgstr "Oh jee..."
+
+#: ../404.php:19
+msgid ""
+"It seems we can't find what you're looking for. Perhaps searching, or one of "
+"the links below, can help you get away from this black hole of doom. Unless "
+"I fucked something up, in which case you're on your own(And you should let "
+"me know :))."
+msgstr ""
+"Het lijkt erop dat we niet kunnen vinden wat je zoekt. Wellicht dat de "
+"zoekfunctie, of een van de links hieronder, je kan helpen om je weg terug te "
+"vinden uit dit zwarte gat. Tenzij ik iets gesloopt heb, wat betekent dat je "
+"er alleen voor staat(En dat je mij dat moet laten weten :))."
+
+#: ../404.php:30 ../archive.php:24
+msgid "Posts by topic"
+msgstr "Posts per onderwerp"
+
+#: ../404.php:36 ../archive.php:30
+#, fuzzy
+msgid "Posts by month"
+msgstr "Gepost op"
+
+#: ../author.php:15
+#, fuzzy, php-format
+msgid "Posts by <span class=\"vcard\">%s</span>"
+msgstr "Auteur Archieven: <span class=\"vcard\">%s</span>"
+
+#: ../comments.php:28
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: ../comments.php:31
+msgid "Your comment is awaiting moderation."
+msgstr "Je commentaar wacht op goedkeuring."
+
+#: ../comments.php:39
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: ../comments.php:41 ../comments.php:59
+msgid "(Edit)"
+msgstr "(Wijzigen)"
+
+#: ../comments.php:59
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../comments.php:70
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Deze post is beschermd met een wachtwoord. Voer een wachtwoord in om de "
+"opmerkingen te bekijken."
+
+#: ../comments.php:81
+#, php-format
+msgid "One Response to %2$s"
+msgid_plural "%1$s Responses to %2$s"
+msgstr[0] "Een reactie op %2$s"
+msgstr[1] "%1$s Reacties op %2$s"
+
+#: ../comments.php:88 ../comments.php:100
+msgid "Comment navigation"
+msgstr "Commentaarnavigatie"
+
+#: ../comments.php:89 ../comments.php:101
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: ../comments.php:90 ../comments.php:102
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwere reacties &rarr;"
+
+#: ../comments.php:118
+msgid "Comments are closed."
+msgstr ""
+
+#: ../full-width-page.php:24 ../image.php:82 ../page.php:18
+msgid "Pages:"
+msgstr "Pagina's:"
+
+#: ../full-width-page.php:25 ../image.php:31 ../image.php:96 ../page.php:19
+#: ../single.php:67
+msgid "Edit"
+msgstr "Wijzigen"
+
+#: ../functions.php:46
+msgid "Primary Menu"
+msgstr "Primair Menu"
+
+#: ../functions.php:47
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: ../functions.php:48
+msgid "Utility Menu"
+msgstr "Extra Menu"
+
+#: ../functions.php:87
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:95
+msgid "Header"
+msgstr ""
+
+#: ../functions.php:103
+msgid "Footer"
+msgstr ""
+
+#: ../functions.php:111
+msgid "Homepage Row 1"
+msgstr ""
+
+#: ../functions.php:119
+msgid "Homepage Row 2"
+msgstr ""
+
+#: ../header.php:30
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: ../header.php:77
+msgid "Skip to content"
+msgstr ""
+
+#: ../image.php:21
+#, php-format
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span>  "
+"at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> "
+"in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: ../image.php:35
+msgid "&larr; Previous"
+msgstr "&larr; Vorige"
+
+#: ../image.php:36
+msgid "Next &rarr;"
+msgstr "Volgende &rarr;"
+
+#: ../image.php:88
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Plaats "
+"een opmerking</a> or laat een trackback achter: <a class=\"trackback-link\" "
+"href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+
+#: ../image.php:90
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Commentaar is gesloten, maar je kan nog wel een <a class=\"trackback-link\" "
+"href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback achterlaten</a>."
+
+#: ../image.php:92
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Trackbacks zijn gesloten, maar je kan nog wel <a class=\"comment-link\" href="
+"\"#respond\" title=\"Post a comment\">opmerkingen posten</a>."
+
+#: ../image.php:94
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Zowel commentaar als trackbacks zijn op dit moment gesloten."
+
+#: ../index.php:65 ../loop-single.php:53 ../loop.php:51
+#, php-format
+msgid "View all posts in %s"
+msgstr "Bekijk alle posts in %s"
+
+#: ../index.php:75 ../loop-single.php:63 ../loop.php:62
+msgid "Keywords"
+msgstr "Trefwoorden"
+
+#: ../loop.php:89
+#, fuzzy
+msgid "&larr; Older posts"
+msgstr "&larr; Vorige"
+
+#: ../loop.php:90
+#, fuzzy
+msgid "Newer posts &rarr;"
+msgstr "Volgende &rarr;"
+
+#: ../search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: ../search.php:24
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: ../search.php:28
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Sorry, maar er is niets dat overeenkomt met deze zoektermen. Probeer het "
+"nogmaals met andere zoektermen."
+
+#: ../sidebar.php:18
+msgid "Archives"
+msgstr "Archieven"
+
+#: ../sidebar.php:25
+msgid "Meta"
+msgstr "Meta"
+
+#: ../single.php:27
+msgid "Posted on"
+msgstr "Gepost op"
+
+#: ../single.php:33
+msgid "by"
+msgstr "door"
+
+#: ../single.php:50
+msgid "It's probably about"
+msgstr "Het gaat vermoedelijk over"
+
+#: ../single.php:54
+msgid "and also"
+msgstr "en ook"
+
+#: ../tag.php:18
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Tag archieven: %s"
+
+#: ../widgets/custom-text-widget.php:14
+msgid "Arbitrary text or HTML, Pure grid selection"
+msgstr ""
+
+#: ../widgets/custom-text-widget.php:16
+msgid "Custom Text"
+msgstr ""
+
+#: ../widgets/custom-text-widget.php:83
+msgid "Title:"
+msgstr ""
+
+#: ../widgets/custom-text-widget.php:86
+msgid "What grid size should this widget be?"
+msgstr ""
+
+#: ../widgets/custom-text-widget.php:96
+msgid "Automatically add paragraphs"
+msgstr ""
+
+#~ msgid "Most Used Categories"
+#~ msgstr "Meest gebruikte categorie&euml;n"
+
+#~ msgid "Browse monthly"
+#~ msgstr "Browse maandelijks"
+
+#~ msgid "Browse through my stuff by month."
+#~ msgstr "Browse door m'n zooi per maand."
+
+#~ msgid "Browse categories"
+#~ msgstr "Meest gebruikte categorien"
+
+#~ msgid "Or, browse through the categories if you prefer that."
+#~ msgstr "Of, browse door de categorieen als je dat prettiger vindt."
+
+#~ msgid "Search for stuff"
+#~ msgstr "Zoek naar zooi"
+
+#~ msgid "Or, just search for things with a keyword or two."
+#~ msgstr "Of, je kan gewoon zoeken met een trefwoord of twee."
+
+#~ msgid "Category Archives: %s"
+#~ msgstr "Categorie Archieven: %s"
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Oudere posts"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Nieuwere posts <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Category"
+#~ msgstr "Categorie"
+
+#~ msgid "Read more"
+#~ msgstr "Lees meer"
+
+#~ msgid "Last modified "
+#~ msgstr "Laatst gewijzigd"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s"
+#~ "\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Dit is gepost in de categorie %1$s met de tags %2$s. Bookmark de <a href="
+#~ "\"%3$s\" title=\"Permalink voor %4$s\" rel=\"bookmark\">permalink</a>."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+#~ "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Dit is gepost in de categorie %1$s. Bookmark de <a href=\"%3$s\" title="
+#~ "\"Permalink voor %4$s\" rel=\"bookmark\">permalink</a>."
+
+#~ msgid ""
+#~ "<span class=\"meta-prep meta-prep-author\">Posted on </span><a href=\"%1$s"
+#~ "\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</"
+#~ "time></a>"
+#~ msgstr ""
+#~ "<span class=\"meta-prep meta-prep-author\">Gepost op </span><a href=\"%1$s"
+#~ "\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</"
+#~ "time></a>"

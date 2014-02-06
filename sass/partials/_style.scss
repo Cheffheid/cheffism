@@ -1,79 +1,13 @@
-// Set colour variables
-$background-colour: #F7F7F7;
-$base-link-colour: #333333; // Note: also used for text-selection
-$base-font-colour: #444444;
-$border-colour: #d2d2d2;
-
-// Mixins
-
-// Prefixer mixin, adds browser vendor prefixes automatically
-// Defaults to webkit, moz and spec
-@mixin prefixer ($property, $value, $webkit: true, $moz: true, $ms: false, $o: false, $spec: true) {
-	@if $webkit { -webkit-#{$property}: $value; }
-	@if $moz    {    -moz-#{$property}: $value; }
-	@if $ms     {     -ms-#{$property}: $value; }
-	@if $o      {      -o-#{$property}: $value; }
-	@if $spec   {         #{$property}: $value; }
-}
-
-// Adds CSS3 box shadow
-@mixin shadow($h-shadow: 0px, $v-shadow: 0px, $blur: 15px, $colour: rgba(0,0,0,0.1)) {
-	@include prefixer(box-shadow, $h-shadow $v-shadow $blur $colour);
-}
-
-// Simple linear gradient mixin
-@mixin linear-gradient($angle: top, $from: #fff, $to: #000) {
-	background: $from;
-	background: linear-gradient($angle, $from, $to);
-	background: -moz-linear-gradient($angle, $from, $to);
-	background: -webkit-linear-gradient($angle, $from, $to);	
-}
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-/*
- *
- * Additional reset
- *
- */
-   
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins,
-kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul,
-li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
-th, td, article, aside, canvas, details, figcaption, figure, footer, header,
-hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-}
+/* Because it's such an awesome feature */
+* { box-sizing: border-box; }
    
 /*
  *
- * Base Typography 
- *
- */
-body { 
-	font: 1em/1.75 Tahoma,Arial,Helvetica,sans-serif; 
-	*font-size: small; 
-}
-
-select, input, textarea, button { 
-	font: 99% sans-serif; 
-}
-
-pre, code, kbd, samp { 
-	font-family: monospace, sans-serif; 
-}
-
-/*
- *
- * Base Styles 
+ * Base Styles
  *
  */
 body, select, input, textarea { 
@@ -81,11 +15,7 @@ body, select, input, textarea {
 }
 body {
 	background: $background-colour;
-	overflow:hidden;
-	max-width: 53.5rem;
-}
-h1,h2,h3,h4,h5,h6 { 
-	font-weight: bold; 
+	overflow-x: hidden;
 }
 
 /* always force a scrollbar in non-IE */ 
@@ -96,61 +26,18 @@ html {
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a {
 	color: $base-link-colour;
+	text-decoration: none;
+	cursor: pointer;
 	font-weight: bold;
-	outline: none;
-	
-	&:hover {
+
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+		color: $link-highlight-colour;
+	}
+	&:visited {
 		@extend a;
-		color: #003366;
-	}
-	&:active, &:visited {
-		@extend a;
 	}
 }
-
-nav {
-	a {
-		font-weight: normal;
-		
-		&:active, &:visited {
-			@extend a;
-		}
-	}
-
-	/* Remove margins for navigation lists */
-	ul, li {
-		margin: 0;
-	}
-}
-
-ul, ol { 
-	margin-left: 1.8em; 
-}
-
-ol { 
-	list-style-type: decimal; 
-}
-
-small { 
-	font-size: 85%; 
-}
-
-strong, th { 
-	font-weight: bold; 
-}
-
-td, td img { 
-	vertical-align: top; 
-}
- 
-sub { 
-	vertical-align: sub; font-size: smaller; 
-}
-
-sup { 
-	vertical-align: super; font-size: smaller; 
-}
-
 pre { 
   padding: 15px; 
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
@@ -158,6 +45,10 @@ pre {
   white-space: pre-wrap; /* CSS 2.1 */
   white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
   word-wrap: break-word; /* IE */
+}
+
+p {
+	line-height: 1.625em;
 }
 
 textarea { 
@@ -190,6 +81,21 @@ textarea {
 	}
 }
 
+.clear {
+	clear: both;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
 /* align checkboxes, radios, text inputs with their label
    by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
 input[type="radio"] { 
@@ -213,7 +119,7 @@ button, input, select, textarea {
 input:valid, textarea:valid   {  }
 input:invalid, textarea:invalid { 
 	border-radius: 1px;
-	@include shadow(0, 0, 5px, red);
+	@include shadow(false, 0, 0, 5px, red);
 }
 
 .no-boxshadow input:invalid, 
@@ -252,558 +158,328 @@ blockquote, q {
 	quotes: none;
 }
 
-a, a:hover { 
-	text-decoration: none;
+pre {
+    white-space: pre-wrap;
 }
 
-body {
-	margin: 0 auto;
-	padding: 1rem 3rem 3rem 3rem;
-}
+/* Header */
 
-p {
-	margin: 1em 0;
-}
+.banner-header {
+	background: $highlight-colour;
 
-/*
- *
- * Structure
- *
- */
-#page {
-	display: block;
-}
-#primary {
-	margin: 0 -240px 0 0;
-	width: 100%;
-}
-#main {
-	margin: 3em 0;
-}
-#colophon {
-	clear: both;
-	display: block;
-	width: 100%;
-}
-
-/* Increase the size of the content area for templates without sidebars */
-.full-width #content,
-.image-attachment #content,
-.error404 #content {
-	margin: 0;
-}
-
-/* Alignment */
-.alignleft {
-	display: inline;
-	float: left;
-}
-.alignright {
-	display: inline;
-	float: right;
-}
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*
- *
- * Header
- *
- */
-hgroup {
-	float: left;
-	width: 100%;
-}
- 
-#site-title {
-	font: 2rem/1rem Georgia,"Times New Roman",Times,serif;
-	font-weight: bold;
-	float: left;
-}
-
-#site-description {
-	font: .75rem/1.9rem Georgia,"Times New Roman",Times,serif;
-	font-weight: normal;
-	float: left;
-	height: 100%;
-	padding: 0 0 0 1rem;
-	width: 35rem;
-}
-
-/*
- *
- * Menu
- *
- */
-#access {
-	display: block;
-	float: left;
-	padding: 0 0 0 .5rem;
-	width: 34rem;
-	
-	ul {
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-		
-		ul {
-			@include shadow(0px, 3px, 3px, rgba(0,0,0,0.2));
-			display: none;
-			float: left;
-			position: absolute;
-			top: 2em;
-			left: 0;
-			z-index: 99999;
-			
-			ul {
-				left: 100%;
-				top: 0;
-			}
-			
-			a {
-				background: $base-link-colour;
-				color: #fff;
-				line-height: 1em;
-				padding: .5em .5em .5em 1em;
-				width: 10em;
-				height: auto;
-			}
-			
-			a:hover {
-				background: $base-link-colour;
-			}
-		}
-
-		li:hover > ul {
-			display: block;
-		}
-	}
-	
-	li {
+	.cell {
+		margin: 0 10px;
 		float: left;
-		position: relative;	
 	}
-	
+	.wrap {
+		margin: 0 auto;
+	}
+}
+
+.site-title, .site-description, .site-title a {
+	margin: 0;
+	color: #FFFFFF;
+}
+.site-title {
+	line-height: 1.5;
+	font-size: 37px;
+	font-size: 2.3125rem;
+}
+
+.header-nav {
+	padding-top: 0.9em;
+	text-align: center;
+
+	a {
+		color: #FFFFFF;
+		font-family: 'Open Sans', sans-serif;
+	}
+	li a:hover, 
+	li a:focus,
+	li.current-menu-item a,
+	li.current_page_item a {
+		background: #5985AF;
+	}
+
+}
+
+.post-meta {
+
+	time {
+		display: block;
+	}
+
+	ul, li {
+		display: inline;
+		margin: 0 5px 0 0;
+	}
+	ul {
+		padding: 0;
+	}
+}
+
+.page-wrap {
+	margin: 1em auto;
+}
+
+.post {
+	margin: 1em auto;
+	background: #FFF;
+	border: 1px solid #EEE;
+	border-radius: 3px;
+	position: relative;
+	float: none;
+	padding: 1em;
+
+	> a {
+		display: block;
+		padding: 1em 1em;
+
+		&:hover {
+			background: #DEDEDE;
+			border-bottom: 1px solid #EEE;
+			margin-bottom: -1px;
+		}
+	}
+
+	h2 {
+		margin: 0;
+	}
+}
+
+.intro {
+	text-align: center;
+
+	h2 {
+		font-size: 2em;
+		margin: 0.25em 0;
+	}
+	p {
+		font-size: 1.15em;
+		margin: 0;
+		text-align: center;
+	}
+}
+
+.cat-links {
+	position: absolute;
+	top: 1em;
+	right: -5px;
+	background: #FFF;
+	border: 1px solid #EEE;
+	text-align: center;
+	display: block;
+	box-shadow: -1px 0px 3px -1px #333;
+	border-radius: 2px 0 0 2px;
+
 	a {
 		display: block;
-		line-height: 2em;
-		padding: 0 1em;
-		text-decoration: none;
-	}
-
-	#menu-primary li:hover > a,
-	ul#menu-primary ul :hover > a {
-		background: $base-link-colour;
-		color: #fff;
-	}
-
-	.qtrans_flag_and_text {
-		padding-left: 1.5rem;
-		background-position: 0 .65rem;
+		padding: 5px 10px;
 	}
 }
 
-.current_page_item > a, .current_page_parent > a {
-	background: $base-link-colour;
-	color: #fff;
+.main-wrap {
+	padding: 0 0.5em;
 }
 
-#change_language li {
-	padding-left: 0.5rem;
-}
-
-/*
- *
- * Homepage specific
- *
- */
- 
- .home-most-recent {
-	@include shadow(0px, 0px, 15px, rgba(0,0,0,0.1));
-	border: 1px solid $border-colour;
-	border-radius: 10px;
-	padding: 1rem;
-	margin-bottom: 2rem;
-	background: #ffffff;
-}
-
-div.home-block , div.footer-block{
-	padding-right: 1.5rem;
-	float: left;
-	width: 47%;
-}
-
-div.right {
-	float: right;
-	text-align: right;
-}
-
-body.home div.footer-blocks, div.home-blocks {
-	padding: 1rem;
-}
- 
-/*
- *
- * Content
- *
- */
- 
-#content {
-
-	nav {
-	display: block;
-	overflow: hidden;
-	
-		.nav-previous {
-			float: left;
-			width: 50%;
-		}
-		
-		.nav-next {
-			float: right;
-			text-align: right;
-			width: 50%;
-		}	
-	}
-	
-	article {
-		width: 100%;
-		margin-bottom: 3rem;
-	}
-}
-
-#nav-below {
-	margin: 1em 0 0;
-}
-.page-link {
-	margin: 0 0 1em;
-}
-
-div.recent_posts {
+.list-title,
+.no-results {
+	text-align: center;
 	margin-top: 1em;
 }
 
-.recent_posts_date {
-	display: block;
-	float: left;
-	width: 10em;
-	padding-left: 20px;
-	background: url("images/blog-icon.png") no-repeat scroll 0 6px;
-}
-.recent_posts_title {
-	display: block;
-	float: left;
-}
-
-.error404 section, .page-template-archive-php section, div#archive-search {
-	margin-bottom: 3rem;
-}
-
-div.archives section h2, div.archives section p {
-	margin: 0;
-}
-
-#archive-months, #archive-categories {
-	width: 100%;
-	overflow: auto;
-	
-	ul {
-		margin-left: 0;
-		overflow: auto;
-	}
-	
-	li {
-		float: left;
-		width: 13rem;
-		list-style: none;
-	}
-}
-
 
 /*
  *
- * Calendar icons in CSS, cheers Chris Spooner!: http://line25.com/tutorials/how-to-create-a-cool-blog-post-date-icon-with-css
+ * Social media menu
  *
  */
-.calendar {
-	@include shadow(0px, 0px, 15px, rgba(0,0,0,0.1));
-	@include linear-gradient(top, #fcfcfc, #dad8d8);
-	border: 1px solid $border-colour;
-	border-radius: 10px;
-	width: 55px; 
-	height: 70px;
-	margin: 0 1em 0 0; 
-	padding: 0;
-	float: left;
-	
-	p {
-		font-size: 1.5rem; 
-		text-align: center; 
-		color: #9e9e9e; 
-		margin: 0; 
-		padding: 0; 
-		border: 0;
-	
-		span {
-			@include linear-gradient(top, #d10000, #7a0909);
-			font-size: .75rem; 
-			font-weight: bold; 
-			color: #fff; 
-			text-transform: uppercase; 	
-			display: block;
-			border-top: 3px solid #a13838;
-			border-radius: 0 0 10px 10px;
-			margin: 0; 
-			border: 0;
-			padding: 3px 0 3px 0;
-		}
-	}
-}
-
-@-moz-document url-prefix() {
-    .calendar {
-        padding: 16px 0 0 0;
-    }
-    .calendar p span {
-    	padding: 9px 0 3px 0;
-    }
-}
-
-/*
- *
- * Images
- *
- */
-/*
-Resize images to fit the main content area.
-- Applies only to images uploaded via WordPress by targeting size-* classes.
-- Other images will be left alone. Use "size-auto" class to apply to other images.
-*/
-img.size-auto,
-img.size-full,
-img.size-large,
-img.size-medium,
-.attachment img,
-.widget-area img {
-	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
-	height: auto; /* Override height to match resized width for correct aspect ratio. */
-}
-img.alignleft {
-	margin-right: 1em;
-}
-img.alignright {
-	margin-left: 1em;
-}
-.wp-caption {
-	padding: .5em;
-	text-align: center;
-	
-	img {
-		margin: .25em;
-	}
-	
-	.wp-caption-text {
-		margin: .5em;
-	}
-}
-
-/* Forms - Class for labelling required form items */
-.required {
-	color: #cc0033;
-}
-
-/*
- *
- * Comments
- *
- */
-ol.commentlist {
-	list-style-type: none;
-	list-style:none;
-	margin:0 0 1em;
-	padding:0;
-	text-indent:0;
-	
-	li {
-		div.vcard cite.fn { 
-			font-style:normal; 
-		}
-		div.vcard img.avatar { 
-			border:5px solid #ccc; 
-			float:right; margin:0 0 1em 1em; 
-		}
-		div.comment-meta { 
-			font-size:9px; 
-		}
-		div.comment-meta a { 
-			color:#ccc; 
-		}
-		p { 
-			margin:0 0 1em; 
-		}
-		ul { 
-			list-style:square; 
-			margin:0 0 1em 2em; 
-		}
-		div.reply { 
-			font-size:11px; 
-		}
-		div.reply a { 
-			font-weight:bold; 
-		}
-		
-		ul.children { 
-			list-style:none; 
-			margin:1em 0 0; 
-			text-indent:0; 
-			
-			li.depth-2 { 
-				border-left:5px solid #555; 
-				margin:0 0 .25em .25em; 
-			}
-			li.depth-3 { 
-				border-left:5px solid #999; 
-				margin:0 0 .25em .25em; 
-			}
-			li.depth-4 { 
-				border-left:5px solid #bbb; 
-				margin:0 0 .25em .25em; 
-			}			
-		}
-	}
-
-	li.comment { 
-		border-bottom:1px dotted #666;
-		padding:1em;
-	}
-	li.even { 
-		background:#f6f6f6;
-	}
-	li.odd { 
-		background:#ffffff;
-	}
-	li.parent { 
-		border-left:5px solid #111;
-	}
-	li.pingback { 
-		border-bottom:1px dotted #666; 
-		padding:1em;
-	}
-}
-
-article.comment {
-	display: block;
-}
-
-#respond {
-	input[type=text] {
-		float: left;
-		margin: 0 1em 0 0;
-		width: 60%;
-	}
-	.comment-form-comment label {
-		display: none;
-	}
-	textarea {
-		margin: 0 1em 1em 0;
-		float: left;
-		width: 80%;
-	}	
-	.form-allowed-tags {
-		clear: both;
-		width: 80%;
-	}
-	.form-allowed-tags code {
-		display: block;
-	}	
-}
-
-
-/*
- *
- * Footer
- *
- */
-#menu-footer {
+.social-menu {
 	list-style: none;
-	padding: 0; margin: 0;
-	width: 40%;
+	padding-top: 0.9em; 
+	margin: 0;
+	float: right;
+
+	.screen-reader-text {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		text-align: right;
+	}
 	
 	li {
-		float: left;
-		margin-right: .25rem;
-		
-		a {
-			display: block;
-			line-height: 0; 
-			color: transparent; 
-			height:25px;
-			width: 25px;
-			background: url('images/sprites.png');
-			background-repeat: no-repeat;
-		}
-	}
-	.twitter a {
-		background-position: -100px -50px;
-		
-		&:hover {
-			background-position: -100px 0;
-		}
-	}
-	.linkedin a {
-		background-position: 0 -52px;
-		
-		&:hover {
-			background-position: 0 0;
-		}
-	}
-	.lastfm a {
-		background-position: -50px -52px;
-		
-		&:hover {
-			background-position: -50px 0;
-		}
-	}
-	.rss a {
-		background-position: -150px -52px;
+		display: inline-block;
+		margin-right: 3%;
 
-		&:hover {
-			background-position: -150px 0;
+		&:last-child {
+			margin-right: 0;
 		}
 	}
-}
 
-/*
- *
- * ngg overrides
- *
- */
-.ngg-gallery-thumbnail img {
-	margin: 4px 5px 4px 0px !important;
-}
-
-
-/*
- *
- * Blockquote styles
- *
- */
-blockquote {
-	background:#f9f9f9;
-	border-left:10px solid #ccc;
-	margin:1.5em 10px;
-	padding:.5em 10px;
+	a {
+		display: block;
+		line-height: 1;
 	
-	&:before {
-		color:#ccc;
-		content:open-quote;
-		font-size:4em;
-		line-height:.1em;
-		margin-right:.25em;
-		vertical-align:-.4em;
+		&:hover, &:focus { 
+			background: transparent;
+
+			span { background-color: #FFFFFF; border-radius: 6px; }
+			.icon-feed { color: #FE9900; }
+			.icon-linkedin { color: #006599; }
+			.icon-github { color: #000000; }
+			.icon-twitter { color: #1BB2E9; }
+			.icon-lastfm { color: #D51008; }
+			.icon-google-plus { color: #DD4C39; }
+		}
+
+	}
+}
+.social-media {
+	margin-top: 1em;
+
+	.share-item {
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: 5px;
+
+		a {
+			color: #FFFFFF;
+			padding: 0.5em;
+			font-size: 0.9em;
+		}
+	}
+
+	span {
+		display: inline-block;
+		vertical-align: middle;		
+		font-weight: normal;
+
+		&:last-child {
+			display: none;
+		}
+	}
+
+	.share-item.fb {
+		a {
+			background-color: #3b579d;
+		}
+	}
+	.share-item.google {
+		a {
+			background-color: #e36044;
+		}
+	}
+	.share-item.twitter {
+		a {
+			background-color: #00aced;
+		}
+	}
+}
+.archives {
+	.archive-list {
+		margin-left: 0;
+
+		li {
+			list-style: none;
+		}
+	}
+	section {
+		margin: 0 0 2em;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+	.searchform {
+		text-align: center;
+
+		label {
+			font-size: 2em;
+			line-height: 1;
+		}
+		input {
+			height: 46px;
+		}
+	}
+}
+.page-title {
+	margin-bottom: 0.25em;
+}
+
+footer.entry-meta {
+	padding-top: 1em;
+	border-top-width: 1px;
+	line-height: 1.5;
+}
+frm_form_fields {
+	fieldset {
+		padding: 0 0.625em 0;
+	}
+}
+
+.gform_fields {
+	margin-left: 0;
+	padding: 0 0.625em 0;
+}
+
+.gfield {
+	margin-bottom: 1em;
+	width: 100%;
+	list-style: none;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	label {
+		padding: 0;
+		font-weight: bold;
+		display: block;
+	}
+	.validation_message {
+		color: #a94442;
+		font-size: 0.75em;
+	}
+	input, textarea {
+		width: 100%;
+	}
+}
+.gform_footer {
+	padding: 0 0.625em 0;
+
+	input, img {
+		float: right;
+		padding: 0.25em 1.5em;
+		margin: 0;
+	}
+	img {
+		float: left;
+		margin-left: 5px;
+	}
+	input {
+		-webkit-transition: background-color 0.25s linear;
+		-moz-transition: background-color 0.25s linear;
+		-ms-transition: background-color 0.25s linear;
+		-o-transition: background-color 0.25s linear;
+		transition: background-color 0.25s linear;
+	
+		&:hover,
+		&:focus {
+			background: $highlight-colour;
+			color: #FFFFFF;
+		}
+	}
+}
+.validation_error {
+	display: none;
+}
+.alternative {
+	margin: 0.5em 0;
+	img {
+		margin-top: 5px;
+		margin-right: 10px;
 	}
 }

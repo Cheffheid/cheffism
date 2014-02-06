@@ -1,10 +1,10 @@
-// Wordpress theme header
-@import "partials/wpheader";
+@import "partials/base";
 
-// HTML5 Boilerplate styles
-@import "partials/html5bp";
+// Cascade Framework - 
+@import "partials/cascade/full";
 
 // Custom theme styles*
+@import "partials/fontface";
 @import "partials/style";
 @import "partials/cannonfodder";
 

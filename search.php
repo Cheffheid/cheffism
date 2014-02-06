@@ -7,12 +7,12 @@
 get_header(); ?>
 
 		<section id="primary" role="region">
-			<div id="content">
+			<div id="content" class="main-wrap">
 
 			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'cheffism' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<header class="entry-header">
+					<h1 class="list-title"><?php printf( __( 'Search Results for: %s', 'cheffism' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header>
 
 				<?php get_template_part( 'loop', 'search' ); ?>
@@ -35,5 +35,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
