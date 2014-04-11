@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<div id="primary">
+		<div id="primary" class="main-wrap">
 			<div id="content" class="archives page-wrap post">
 
 				<article>

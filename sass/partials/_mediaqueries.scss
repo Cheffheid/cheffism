@@ -253,7 +253,7 @@ and (min-width : 321px) and (max-width : 650px) {
 		margin: 0 auto;
     }
     .post, .page-wrap, .banner-header .wrap {
-    	width: 885px;
+    	max-width: 885px;
     }
     .post {
     	font-size: 1.125em;

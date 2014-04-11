@@ -9,7 +9,7 @@
 get_header(); ?>
 
 		<section id="primary" role="region">
-			<div id="content">
+			<div id="content" class="page-wrap">
 
 				<?php the_post(); ?>
 
@@ -26,5 +26,4 @@ get_header(); ?>
 			</div><!-- #content -->
 		</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

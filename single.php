@@ -25,8 +25,7 @@ get_header(); ?>
 						<div class="entry-meta">
 							<?php 
 								_e('Posted on', 'cheffism' );
-								printf( ' <a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" itemprop="datePublished">%3$s</time></a> ',
-									get_permalink(),
+								printf( ' <time class="entry-date" datetime="%1$s" itemprop="datePublished">%2$s</time> ',
 									get_the_date( 'c' ),
 									get_the_date()
 								);
