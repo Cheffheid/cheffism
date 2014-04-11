@@ -18,6 +18,15 @@ if ( is_readable( $locale_file ) )
 require_once(get_template_directory() . '/widgets/custom-recent-posts.php');
 require_once(get_template_directory() . '/widgets/custom-text-widget.php');
 
+/** Disable XML-RPC **/
+add_filter('xmlrpc_enabled', '__return_false');
+
+function remove_x_pingback($headers) {
+    unset($headers['X-Pingback']);
+    return $headers;
+}
+add_filter('wp_headers', 'remove_x_pingback');
+
 /**
  * Frontend enqueues
  */
@@ -29,20 +38,26 @@ function frontend_scripts() {
 	}
 
 	// Font
-	wp_register_style( 'google-font-open-sans', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,700italic', null, null, 'all');
-	wp_enqueue_style('google-font-open-sans');
+	wp_register_style( 'google-fonts', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
+	wp_enqueue_style('google-fonts');
+
+	// Stylesheet
+	wp_register_style('main-style', get_template_directory_uri() . '/style.css', 'google-fonts', '0.4', 'all' );
+	wp_enqueue_style('main-style');
+
+    // modernizr-js
+    wp_register_script( 'modernizr-js', get_template_directory_uri() . '/js/Modernizr.min.js', null, '0.4', true );
+    wp_enqueue_Script( 'modernizr-js' );
 
 	// jQuery
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', $protocol . '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, '2.0.3', true);
+    wp_register_script( 'jquery', $protocol . '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
     wp_enqueue_script( 'jquery' );
 
-    wp_register_script( 'modernizr-js', get_template_directory_uri() . '/js/Modernizr.min.js', '0.4', false );
-    wp_enqueue_Script( 'modernizr-js' );
-
+    // Custom scripts
     wp_register_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '0.4', true );
     wp_enqueue_Script( 'custom-js' );
-}    
+}
 add_action('wp_enqueue_scripts', 'frontend_scripts');
 
 register_nav_menus( array(
@@ -133,7 +148,7 @@ add_action( 'init', 'cheffism_widgets_init' );
 //change the UA-XXXXX-X to be your site's ID
 add_action('wp_head', 'async_google_analytics');
 function async_google_analytics() { ?>
-	<script type="text/javascript">
+	<script async type="text/javascript">
 
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-22338583-1']);

@@ -11,7 +11,6 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 	<title><?php
@@ -30,25 +29,12 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'cheffism' ), max( $paged, $page ) );
 
 	?></title>
-	
-	<meta name="description" content="<?php if ( is_single() ) {
-        single_post_title('', true); 
-    } else {
-        bloginfo('name'); echo " - "; bloginfo('description');
-    }
-    ?>">
+			
 	<meta name="author" content="Jeffrey de Wit">
 	<!--  Mobile Viewport Fix -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<?php wp_head(); ?>
-
-	<!-- Place favicon.ico and apple-touch-icons in the images folder -->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
-
-	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	
 	<!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,9 +44,6 @@
 	<link rel="alternate" type="application/atom+xml" title="Atom Feed for <?php bloginfo( 'name' ); ?>" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RDF/RSS 1.0 Feed for <?php bloginfo( 'name' ); ?>" href="<?php bloginfo('rdf_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 0.92 Feed for <?php bloginfo( 'name' ); ?>" href="<?php bloginfo('rss_url'); ?>" />
-	
-
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" />
 </head>
 	
 <body <?php body_class();  ?>>
