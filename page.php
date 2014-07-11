@@ -23,7 +23,7 @@ get_header(); ?>
 				datetime="<?php the_modified_date( 'Y-m-d' ); ?>">
 					<?php the_modified_date(); ?>
 			</time>
-			<span class="author post-author vcard">
+			<span class="author post-author vcard hidden">
 				<span class="fn">
 					<?php the_author_posts_link(); ?>
 				</span>

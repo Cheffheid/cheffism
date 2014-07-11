@@ -19,10 +19,7 @@
 	 */
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
+	wp_title();
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
@@ -47,6 +44,7 @@
 </head>
 	
 <body <?php body_class();  ?>>
+<div class="skip-link"><a href="#content" title="<?php esc_attr_e( 'Use this link to skip the header navigation', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
 <div id="page" class="hfeed page-wrapper">
 	<header id="branding" class="banner-header col" role="banner">
 		<div class="wrap">
@@ -62,12 +60,9 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<div class="cell">
-				<nav id="access" role="navigation" class="header-nav nav col">
-					<div class="skip-link visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav' ) ); ?>
-				</nav><!-- #access -->
-			</div>
+			<nav id="access" role="navigation" class="header-nav nav col">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav' ) ); ?>
+			</nav><!-- #access -->
 			<div class="col width-1of4 social-menu">
 				<?php
 					dynamic_sidebar( 'header' );
