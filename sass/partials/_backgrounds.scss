@@ -1,0 +1,60 @@
+.post {
+	&.background {
+		padding-top: 35%;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+
+		&.marvel {
+			background-image: url('http://cheffism.com/wp-content/uploads/2014/07/marvel-api-300x96.jpg');
+		}
+	}
+}
+
+@media (min-width: 380px) {
+	.post {
+		&.background {
+			&.marvel {
+				background-image: url('http://cheffism.com/wp-content/uploads/2014/07/marvel-api-368x118.jpg');
+			}
+		}
+	}
+}
+@media (min-width: 600px) {
+	.post {
+		&.background {
+			&.marvel {
+				background-image: url('http://cheffism.com/wp-content/uploads/2014/07/marvel-api-588x188.jpg');
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.post {
+		&.background {
+			padding-top: 250px;
+
+			&.marvel {
+				background-image: url('http://cheffism.com/wp-content/uploads/2014/07/marvel-api-720x231.jpg');
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.post {
+		&.background {
+			padding-top: 300px;
+		}
+	}
+}
+
+@media (max-height: 385px) {
+	.post {
+		&.background {
+			padding-top: 20px;
+			background-image: none !important;
+		}
+	}
+
+}
