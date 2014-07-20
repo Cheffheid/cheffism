@@ -27,6 +27,11 @@ function remove_x_pingback($headers) {
 }
 add_filter('wp_headers', 'remove_x_pingback');
 
+add_image_size( 'full-header', 720, 300, false );
+add_image_size( 'tablet-header', 588, 245, false );
+add_image_size( 'mobile-header', 368, 153, false );
+add_image_size( 'small-mobile-header', 300, 125, false );
+
 /**
  * Frontend enqueues
  */
@@ -194,3 +199,7 @@ function register_shortcodes(){
    add_shortcode('age', 'age_function');
 }
 add_action( 'init', 'register_shortcodes');
+
+function my_get_post_classes() {
+	return get_post_meta('article_class', true);
+}

@@ -10,8 +10,7 @@ get_header(); ?>
 			<div id="content" class="content main-wrap">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				<article id="post-<?php the_ID(); ?>" <?php post_class(get_post_meta(get_the_ID(), 'article_class', true)); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 					<header class="entry-header">
 						<h1 class="page-title entry-title h2" itemprop="name"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->

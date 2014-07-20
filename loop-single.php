@@ -18,7 +18,7 @@
 	$category = get_the_category(); 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class(get_post_meta(get_the_ID(), 'article_class', true)); ?> role="article" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
 	<header class="entry-header">
 		<h2 class="entry-title" itemprop="name">
 			<a href="<?php the_permalink(); ?>" 
