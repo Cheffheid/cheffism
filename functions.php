@@ -80,6 +80,9 @@ function cheffism_frontend_scripts() {
 	wp_register_style( 'google-fonts', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
 	wp_enqueue_style('google-fonts');
 
+	wp_register_style( 'font-awesome', $protocol . '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', null, null, 'all');
+	wp_enqueue_style('font-awesome');
+
 	// Stylesheet
 	wp_register_style('main-style', get_template_directory_uri() . '/style.css', 'google-fonts', null, 'all' );
 	wp_enqueue_style('main-style');

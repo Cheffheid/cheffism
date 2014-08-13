@@ -331,12 +331,10 @@ pre {
     list-style: none;
     margin: 0;
     float: right;
+    width: auto;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
 
-    .screen-reader-text {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
     ul {
         margin: 0;
         padding: 0;
@@ -355,15 +353,18 @@ pre {
     a {
         display: block;
         line-height: 1;
-    
-        &:hover, &:focus { 
-            background: transparent;
 
-            span { background-color: #FFFFFF; border-radius: 6px; }
+        i {
+            @extend .animate;
+            font-size: 1.75em; 
+            color: #FFFFFF; 
+        }
+    
+        &:hover, &:focus {
             .icon-feed { color: #FE9900; }
-            .icon-linkedin { color: #006599; }
-            .icon-github { color: #000000; }
-            .icon-twitter { color: #1BB2E9; }
+            .fa-linkedin-square { color: #006599; }
+            .fa-github-square { color: #000000; }
+            .fa-twitter-square { color: #1BB2E9; }
             .icon-lastfm { color: #D51008; }
             .icon-google-plus { color: #DD4C39; }
         }
@@ -515,11 +516,7 @@ frm_form_fields {
         }
     }
 }
-.social-menu {
-    width: auto;
-    padding-top: 0.5em;
-    padding-right: 0.5em;
-}
+
 .archives .archive-list li {
     width: 100%;
 
