@@ -39,6 +39,7 @@ you can use the generic selector below, but it's slower:
 .icon-lastfm, 
 .icon-google-plus,
 .icon-google-plus2 {
+	@extend .animate;
 	font-family: 'social';
 	speak: none;
 	font-style: normal;

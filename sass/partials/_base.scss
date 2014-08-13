@@ -10,6 +10,7 @@
 // Set colour variables
 $background-colour: #F7F7F7;
 $base-link-colour: #333333; // Note: also used for text-selection
+$base-font-colour: #333333;
 $link-highlight-colour: #1D92FF;
 $base-font-colour: #444444;
 $border-colour: #d2d2d2;
@@ -17,6 +18,11 @@ $highlight-colour: #0A365F;
 
 $base-font-size: 16px;
 $base-line-height: 24px;
+$base-font-family: "Droid Serif", serif;
+$base-font-weight: 500;
+
+$heading-font-family: "Droid Sans", sans-serif;
+$heading-font-weight: 600;
 
 // Mixins
 
@@ -43,5 +49,3 @@ $base-line-height: 24px;
 	background: -moz-linear-gradient($angle, $from, $to);
 	background: -webkit-linear-gradient($angle, $from, $to);	
 }
-
-@import "compass/reset";

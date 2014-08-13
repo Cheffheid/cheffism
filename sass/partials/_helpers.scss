@@ -42,6 +42,17 @@
     width: auto;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 .invisible {
     visibility: hidden;
 }
@@ -60,7 +71,17 @@
     *zoom: 1;
 }
 
+.clear {
+    clear: both;
+}
+
 .ninjalist {
     list-style: none;
     margin-left: 0;
+}
+
+.animate {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
