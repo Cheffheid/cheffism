@@ -15,56 +15,36 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 if ( is_readable( $locale_file ) )
 	require_once( $locale_file );
 
-require_once(get_template_directory() . '/widgets/custom-recent-posts.php');
-require_once(get_template_directory() . '/widgets/custom-text-widget.php');
+/**
+ * Include Widget and Shortcode files
+ */
+require_once(get_template_directory() . '/includes/widgets/custom-recent-posts.php');
+require_once(get_template_directory() . '/includes/widgets/custom-text-widget.php');
+require_once(get_template_directory() . '/includes/shortcodes.php');
 
-/** Disable XML-RPC **/
+/** 
+ * Disable XML-RPC 
+ */
 add_filter('xmlrpc_enabled', '__return_false');
-
-function remove_x_pingback($headers) {
+function cheffism_remove_x_pingback($headers) {
     unset($headers['X-Pingback']);
     return $headers;
 }
-add_filter('wp_headers', 'remove_x_pingback');
+add_filter('wp_headers', 'cheffism_remove_x_pingback');
 
+/**
+ * Add different image sizes, lower thumbnail quality to 80%
+ */
 add_image_size( 'full-header', 720, 300, false );
 add_image_size( 'tablet-header', 588, 245, false );
 add_image_size( 'mobile-header', 368, 153, false );
 add_image_size( 'small-mobile-header', 300, 125, false );
 
+add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
+
 /**
- * Frontend enqueues
+ * Register navs
  */
-function frontend_scripts() {
-	// Workaround for Wordpress not recognising protocol relative URL's
-	$protocol = "http:";
-    if ($_SERVER['HTTPS'] == 'on') {
-	    $protocol = 'https:';
-	}
-
-	// Font
-	wp_register_style( 'google-fonts', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
-	wp_enqueue_style('google-fonts');
-
-	// Stylesheet
-	wp_register_style('main-style', get_template_directory_uri() . '/style.css', 'google-fonts', '0.4', 'all' );
-	wp_enqueue_style('main-style');
-
-    // modernizr-js
-    wp_register_script( 'modernizr-js', get_template_directory_uri() . '/js/Modernizr.min.js', null, '0.4', true );
-    wp_enqueue_Script( 'modernizr-js' );
-
-	// jQuery
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', $protocol . '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
-    wp_enqueue_script( 'jquery' );
-
-    // Custom scripts
-    wp_register_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '0.4', true );
-    wp_enqueue_Script( 'custom-js' );
-}
-add_action('wp_enqueue_scripts', 'frontend_scripts');
-
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'cheffism' ),
 	'footer' => __( 'Footer Menu', 'cheffism' ),
@@ -84,23 +64,46 @@ add_theme_support( 'post-thumbnails' );
 /**
  *	This theme supports editor styles
  */
-
 add_editor_style("/css/layout-style.css");
+
+/**
+ * Frontend enqueues
+ */
+function cheffism_frontend_scripts() {
+	// Workaround for Wordpress not recognising protocol relative URL's
+	$protocol = "http:";
+    if ($_SERVER['HTTPS'] == 'on') {
+	    $protocol = 'https:';
+	}
+
+	// Font
+	wp_register_style( 'google-fonts', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
+	wp_enqueue_style('google-fonts');
+
+	// Stylesheet
+	wp_register_style('main-style', get_template_directory_uri() . '/style.css', 'google-fonts', null, 'all' );
+	wp_enqueue_style('main-style');
+
+    // modernizr-js
+    wp_register_script( 'modernizr-js', get_template_directory_uri() . '/js/Modernizr.min.js', null, null, true );
+    wp_enqueue_Script( 'modernizr-js' );
+
+	// jQuery
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', $protocol . '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
+    wp_enqueue_script( 'jquery' );
+}
+add_action('wp_enqueue_scripts', 'cheffism_frontend_scripts');
 
 /**
  *	Replace the default welcome 'Howdy' in the admin bar with something more professional.
  */
-function admin_bar_replace_howdy($wp_admin_bar) {
+function cheffism_admin_bar_replace_howdy($wp_admin_bar) {
     $account = $wp_admin_bar->get_node('my-account');
     $replace = str_replace('Howdy,', 'Welcome,', $account->title);            
     $wp_admin_bar->add_node(array('id' => 'my-account', 'title' => $replace));
 }
-add_filter('admin_bar_menu', 'admin_bar_replace_howdy', 25);
-
-/**
- * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
- */
-add_theme_support( 'post-formats', array( 'gallery', 'status' ) );
+add_filter('admin_bar_menu', 'cheffism_admin_bar_replace_howdy', 25);
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -149,10 +152,10 @@ function cheffism_widgets_init() {
 }
 add_action( 'init', 'cheffism_widgets_init' );
 
-// asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
-//change the UA-XXXXX-X to be your site's ID
-add_action('wp_head', 'async_google_analytics');
-function async_google_analytics() { ?>
+/**
+ * asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+ */
+function cheffism_async_google_analytics() { ?>
 	<script async type="text/javascript">
 
 		var _gaq = _gaq || [];
@@ -167,39 +170,35 @@ function async_google_analytics() { ?>
 
 	</script>
 <?php }
+add_action('wp_head', 'cheffism_async_google_analytics');
 
-function new_excerpt_more( $more ) {
+/**
+ * Hellipses at the end of excerpts!
+ */
+function cheffism_new_excerpt_more( $more ) {
 	return '&hellip;';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'cheffism_new_excerpt_more');
 
-function custom_excerpt_length( $length ) {
+/**
+ * Set excerpt to 100 characters
+ */
+function cheffism_custom_excerpt_length( $length ) {
 	return 100;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'cheffism_custom_excerpt_length', 999 );
 
-function age_function($atts){
-   extract(shortcode_atts(array(
-      'date' => '11/04/1985',
-      'format' => 'dd/MM/YYYY'
-   ), $atts));
-
-  
-  //explode the date to get month, day and year
-  $date = explode("/", $date);
-  //get age from date or birthdate
-  $age = (date("md", date("U", mktime(0, 0, 0, $date[1], $date[0], $date[2]))) > date("md")
-    ? ((date("Y") - $date[2]) - 1)
-    : (date("Y") - $date[2]));
-
-  return $age;
-
-}
-function register_shortcodes(){
-   add_shortcode('age', 'age_function');
-}
-add_action( 'init', 'register_shortcodes');
-
-function my_get_post_classes() {
-	return get_post_meta('article_class', true);
-}
+/**
+ * Mobile nav toggle script, inline because it's so small
+ */
+function cheffism_mobile_nav_js() { ?>
+	<script async type="text/javascript">
+		(function($){
+			$( '.mobile-nav' ).click(function() {
+				event.preventDefault();
+				$('.page-wrapper').toggleClass('active');
+			});
+		})(jQuery);
+	</script>
+<?php }
+add_action('wp_footer', 'cheffism_mobile_nav_js', 999);

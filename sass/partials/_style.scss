@@ -309,6 +309,7 @@ pre {
 }
 
 .intro {
+	padding: 2em 0;
 	text-align: center;
 
 	h2 {
@@ -398,62 +399,6 @@ pre {
 			.icon-google-plus { color: #DD4C39; }
 		}
 
-	}
-}
-.social-media {
-	margin-top: 1em;
-
-	.share-item {
-		display: inline-block;
-		vertical-align: bottom;
-		margin-right: 5px;
-
-		a {
-			color: #FFFFFF;
-			padding: 0.5em;
-			font-size: 0.9em;
-		}
-	}
-
-	span {
-		display: inline-block;
-		vertical-align: middle;		
-		font-weight: normal;
-
-		&:last-child {
-			display: none;
-		}
-	}
-
-	.share-item.fb {
-		a {
-			background-color: #3b579d;
-
-			&:hover,
-			&:focus {
-				background-color: #213057;
-			}
-		}
-	}
-	.share-item.google {
-		a {
-			background-color: #e36044;
-
-			&:hover,
-			&:focus {
-				background-color: #99341E;
-			}
-		}
-	}
-	.share-item.twitter {
-		a {
-			background-color: #00aced;
-
-			&:hover,
-			&:focus {
-				background-color: #0A6D92;
-			}
-		}
 	}
 }
 .archives {

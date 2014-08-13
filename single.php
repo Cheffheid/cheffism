@@ -71,24 +71,6 @@ get_header(); ?>
 
 						<?php edit_post_link( __( 'Edit', 'cheffism' ), '<span class="edit-link">', '</span>' ); ?>
 
-						<div class="social-media clearfix">
-							<h3 class="share-title">Share this post</h3>
-							<div class="share-item fb">
-								<a class="text-hide" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">
-									<span class="icon-facebook2"></span><span>Share on Facebook</span>
-								</a>
-							</div>
-							<div class="share-item google">
-								<a class="text-hide" href="https://plus.google.com/share?url=<?php echo get_permalink(); ?>" target="_blank">
-									<span class="icon-google-plus"></span><span>Share on Google+</span>
-								</a>
-							</div>
-							<div class="share-item twitter">
-								<a class="text-hide" href="https://twitter.com/share?via=Cheffheid" data-via="Cheffheid" data-url="<?php echo get_permalink(); ?>" target="_blank">
-									<span class="icon-twitter2"></span><span>Tweet this post</span>
-								</a>
-							</div>
-						</div>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 			<?php endwhile; // end of the loop. ?>
