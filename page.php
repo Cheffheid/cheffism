@@ -4,11 +4,19 @@
  * @subpackage Cheffism
  */
 
-get_header(); ?>
-	<div id="content" class="content main-wrap">
+get_header(); 
+
+$schema = get_post_meta( get_the_ID(), '_cheffism_schema_type', true );
+
+if (empty($schema)) {
+	$schema = 'WebPage';
+}
+
+?>
+	<div id="content" class="content main-wrap" itemscope itemtype="http://schema.org/<?php echo $schema; ?>">
 		<?php the_post(); ?>
 
-		<article class="hentry page-wrap post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+		<article class="hentry page-wrap post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemprop="mainContentOfPage">
 			<header class="entry-header">
 				<h1 class="page-title entry-title"><?php the_title(); ?></h1>
 			</header><!-- .entry-header -->

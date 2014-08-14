@@ -15,7 +15,7 @@ get_header(); ?>
 						dynamic_sidebar( 'homepage-2' );
 					?>
 				</div>
-				<div itemscope itemtype="http://schema.org/Blog">
+				<div>
 					<?php
 						$args = array(
 							'posts_per_page' => 1,
@@ -30,16 +30,16 @@ get_header(); ?>
 						$category = get_the_category(); 
 					?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class(get_post_meta(get_the_ID(), 'article_class', true)); ?> role="article" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+					<article id="post-<?php the_ID(); ?>" <?php post_class(get_post_meta(get_the_ID(), 'article_class', true)); ?> role="article">
 						<header class="entry-header">
-							<h2 class="entry-title" itemprop="name">
+							<h2 class="entry-title">
 								<a href="<?php the_permalink(); ?>" 
 						title="<?php printf( esc_attr__( 'Permalink to %s', 'cheffism' ), the_title_attribute( 'echo=0' ) ); ?>" 
 						rel="bookmark"><?php the_title(); ?></a>
 							</h2>
 						</header><!-- .entry-header -->
 
-						<div class="entry-summary" itemprop="text">
+						<div class="entry-summary">
 							<?php the_content(); ?>
 						</div><!-- .entry-summary -->
 						<footer class="entry-meta">
@@ -54,8 +54,7 @@ get_header(); ?>
 									);
 									_e('by', 'cheffism');
 								?>
-								<time class="updated hidden" 
-									itemprop="dateModified" 
+								<time class="updated hidden"
 									datetime="<?php the_modified_date( 'Y-m-d' ); ?>">
 										<?php the_modified_date(); ?>
 								</time>
@@ -63,6 +62,7 @@ get_header(); ?>
 									<span class="fn">
 										<?php the_author_posts_link(); ?>
 									</span>
+									<link rel="author" href="https://plus.google.com/u/0/+JeffreydeWitCheff"/>
 								</span>
 							</div><!-- .entry-meta -->
 
@@ -72,16 +72,16 @@ get_header(); ?>
 								
 								if ( $category[0]->name == 'Uncategorized' ) {
 									$utility_text = __( 'This post is', 'cheffism' );
-									$utility_text .= ' <span itemprop="about">%1$s</span> ';
+									$utility_text .= ' <span>%1$s</span> ';
 								} else {
 									$utility_text = __( 'It\'s probably about', 'cheffism' );
-									$utility_text .= ' <span itemprop="about">%1$s</span> ';
+									$utility_text .= ' <span>%1$s</span> ';
 								}
 
 								
 								if ( '' != $tag_list ) {
 									$utility_text .= __('and also', 'cheffism');
-									$utility_text .= ' <span itemprop="keywords">%2$s</span>. ';
+									$utility_text .= ' <span>%2$s</span>. ';
 								}
 
 								printf(
