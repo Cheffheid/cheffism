@@ -99,7 +99,7 @@ function cheffism_frontend_scripts() {
 add_action('wp_enqueue_scripts', 'cheffism_frontend_scripts');
 
 /**
- *  Replace the default welcome 'Howdy' in the admin bar with something more professional.
+ *  Replace the default welcome 'Howdy' in the admin bar with something nicer.
  */
 function cheffism_admin_bar_replace_howdy($wp_admin_bar) {
     $account = $wp_admin_bar->get_node('my-account');
