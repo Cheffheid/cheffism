@@ -181,6 +181,7 @@ sub {
 
 img {
   border: 0;
+  max-width: 100%;
 }
 
 /**
@@ -199,7 +200,8 @@ svg:not(:root) {
  */
 
 figure {
-  margin: 1em 40px;
+  margin: 1em 0;
+  max-width: 100%;
 }
 
 /**

@@ -89,3 +89,23 @@
 .red {
     color: #8B0000;
 }
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+blockquote.alignleft, 
+figure.wp-caption.alignleft, 
+img.alignleft {
+    margin: 7px 14px 7px -14px
+}
+
+blockquote.alignright, 
+figure.wp-caption.alignright, 
+img.alignright {
+    margin: 7px -14px 7px 14px
+}
