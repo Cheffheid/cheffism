@@ -70,6 +70,8 @@
 						$utility_text .= ' <span itemprop="keywords">%2$s</span>. ';
 					}
 
+					$utility_text .= '<div><a class="read-more" href="%3$s" title="Read %4$s">Read This Article</a></div>';
+
 					printf(
 						$utility_text,
 						get_the_category_list( ', ' ),
