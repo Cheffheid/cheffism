@@ -42,6 +42,16 @@ function cheffism_setup() {
 
     // This theme supports editor styles
     add_editor_style("/css/layout-style.css");
+
+    // Add support for post formats
+    add_theme_support( 'post-formats', array(
+        'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+    ) );
+
+    // Add HTML5 support
+    add_theme_support( 'html5', array(
+        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+    ) );
 }
 add_action( 'after_setup_theme', 'cheffism_setup' );
 
@@ -106,21 +116,13 @@ function cheffism_widgets_init() {
         'after_title' => '</h4>',
     ) );
     register_sidebar( array (
-        'name' => __( 'Homepage Row 1', 'cheffism' ),
-        'id' => 'homepage-1',
+        'name' => __( 'Homepage Content', 'cheffism' ),
+        'id' => 'homepage-content',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => "</div>",
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>',
-    ) );
-    register_sidebar( array (
-        'name' => __( 'Homepage Row 2', 'cheffism' ),
-        'id' => 'homepage-2',
-        'before_widget' => '<div id="%1$s" class="home-widget widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
+    ) );        
 }
 add_action( 'init', 'cheffism_widgets_init' );
 

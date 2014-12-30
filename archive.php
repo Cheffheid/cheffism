@@ -11,7 +11,7 @@ get_header(); ?>
 
 				<header>
 					<h1 class="list-title">
-						<span>Post Archive</span>
+						<span><?php post_type_archive_title(); single_cat_title(); single_month_title(); ?></span>
 					</h1>
 
 				</header>
