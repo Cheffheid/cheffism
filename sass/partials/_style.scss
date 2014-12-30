@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
 /* Because it's such an awesome feature */
 * { box-sizing: border-box; -moz-box-sizing: border-box; }
    
@@ -48,30 +44,12 @@ textarea {
     overflow: auto; /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 }
 
-.ie6 {
-    legend {
-        margin-left: -7px;
-    }
-    
-    input {
-        vertical-align: text-bottom; 
-    }   
-}
-
-.ie7 {
-    legend {
-        margin-left: -7px;
-    }
-    
-    input[type="checkbox"] {
-        vertical-align: baseline; 
-    }
-    
-    /* bicubic resizing for non-native sized IMG: 
-       code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
-    img {
-        -ms-interpolation-mode: bicubic;
-    }
+/* Mark external links with a font awesome icon */
+a[rel="external"]:after {
+    display: inline-block;
+    content: "\f08e";
+    font: normal normal normal 12px/1 FontAwesome;
+    margin-left: 5px;
 }
 
 /* align checkboxes, radios, text inputs with their label
@@ -199,8 +177,10 @@ pre {
 }
 .site-title {
     line-height: 1.5;
-    font-size: 37px;
-    font-size: 2.3125rem;
+    font-size: 26px;
+    font-size: 1.6rem;
+    float: left;
+    padding: 0 1.5em;
 }
 
 .header-nav {
@@ -231,8 +211,6 @@ pre {
         }
     }
 }
-
-
 
 .post-meta {
 
@@ -329,16 +307,13 @@ pre {
  */
 .social-menu {
     list-style: none;
-    margin: 0;
-    float: right;
-    width: auto;
-    padding-top: 0.5em;
-    padding-right: 0.5em;
+    margin: 0 auto;
+    padding: 1em;
 
     ul {
         margin: 0;
         padding: 0;
-        text-align: right;
+        display: inline-block;
     }
     
     li {
@@ -407,7 +382,12 @@ footer.entry-meta {
     border-top-width: 1px;
     line-height: 1.5;
 }
-frm_form_fields {
+
+footer {
+    @extend .clearfix;
+}
+
+.frm_form_fields {
     fieldset {
         padding: 0 0.625em 0;
     }
