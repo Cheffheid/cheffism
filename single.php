@@ -37,7 +37,7 @@ get_header(); ?>
 							</time>
 							<span class="author post-author vcard">
 								<span class="fn">
-									<?php the_author_posts_link(); ?>
+									<?php the_author_link(); ?>
 								</span>
 							</span>
 						</div><!-- .entry-meta -->

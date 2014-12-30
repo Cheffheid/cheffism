@@ -74,7 +74,7 @@
 		<?php endif; ?>
 		<span class="author post-author vcard hidden">
 			<span class="fn">
-				<?php the_author_posts_link(); ?>
+				<?php the_author_link(); ?>
 			</span>
 		</span>
 	</footer><!-- .post-meta -->
