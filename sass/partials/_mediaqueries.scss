@@ -118,6 +118,11 @@ and (min-width : 321px) and (max-width : 650px) {
             transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
         }
     }
+
+    .site-title {
+        float: right;
+        margin: 8px 0;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -140,6 +145,9 @@ and (min-width : 321px) and (max-width : 650px) {
 
     .header-nav .menu li {
         width: auto;
+    }
+    .site-title {
+        margin: 0;
     }
 }
 
