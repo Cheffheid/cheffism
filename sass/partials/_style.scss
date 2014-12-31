@@ -259,7 +259,7 @@ pre {
 .comments {
     @extend .post;
 
-    
+
 }
 
 .intro {
@@ -424,6 +424,9 @@ footer {
     }
     input, textarea {
         width: 100%;
+    }
+    textarea {
+        max-height: 120px;
     }
 }
 .gform_footer {
