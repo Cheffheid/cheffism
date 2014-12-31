@@ -73,6 +73,11 @@ get_header(); ?>
 
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
+				<?php
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
 			<?php endwhile; // end of the loop. ?>
 				<nav id="nav-above" role="article">
 					<div class="fixed previous"><?php previous_post_link('%link', '&larr; Older Post'); ?></div>

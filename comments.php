@@ -65,7 +65,7 @@ endif; // ends check for handcraftedwp_comment()
 
 ?>
 
-	<div id="comments">
+	<div id="comments" class="comments">
 	<?php if ( post_password_required() ) : ?>
 		<div class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'cheffism' ); ?></div>
 	</div><!-- .comments -->

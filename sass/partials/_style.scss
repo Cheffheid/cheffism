@@ -256,6 +256,12 @@ pre {
     }
 }
 
+.comments {
+    @extend .post;
+
+    
+}
+
 .intro {
     padding: 2em 0;
     text-align: center;
