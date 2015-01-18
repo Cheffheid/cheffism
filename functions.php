@@ -61,7 +61,7 @@ add_action( 'after_setup_theme', 'cheffism_setup' );
 function cheffism_frontend_scripts() {
     // Workaround for Wordpress not recognising protocol relative URL's
     $protocol = "http:";
-    if ($_SERVER['HTTPS'] == 'on') {
+    if ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
         $protocol = 'https:';
     }
 
