@@ -231,7 +231,4 @@ function cheffism_fix_skip_nav() { ?>
 add_action('wp_footer', 'cheffism_fix_skip_nav', 999);
 
 /** Include Widgets, Shortcodes, Metaboxes */
-require_once(get_template_directory() . '/includes/widgets/custom-recent-posts.php');
-require_once(get_template_directory() . '/includes/widgets/custom-text-widget.php');
 require_once(get_template_directory() . '/includes/metaboxes.php');
-require_once(get_template_directory() . '/includes/shortcodes.php');
