@@ -13,7 +13,7 @@ if (empty($schema)) {
 }
 
 ?>
-	<div id="content" class="content main-wrap" itemscope itemtype="http://schema.org/<?php echo $schema; ?>">
+	<div itemscope itemtype="http://schema.org/<?php echo $schema; ?>">
 		<?php the_post(); ?>
 
 		<article class="hentry page-wrap post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemprop="mainContentOfPage">

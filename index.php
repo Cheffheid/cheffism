@@ -6,38 +6,29 @@
  * @subpackage Cheffism
  */
 
-get_header(); ?>
+get_header(); 
 
-<div id="content" class="content full-width">
-	<div class="main-wrap" role="main">
-		<div class="intro">
-			<?php
-				dynamic_sidebar( 'homepage-content' );
-			?>
-		</div>
-		<div>
-			<?php
-				$args = array( 'posts_per_page' => 1,
-					'ignore_sticky_posts' => true );
-				$query = new WP_Query( $args );
+if ( have_posts() ) :
+	$first = true;
 
-				if ( $query->have_posts() ) {
-					while ( $query->have_posts() ) : $query->the_post();
-					
-					get_template_part( 'postformats/post', get_post_format() );
-					
-					endwhile;
+	// Start the loop.
+	while ( have_posts() ) : the_post();
+		if ( $first ) {
+			get_template_part( 'content-templates/content', 'featured');
+			$first = false;
+		} else {
+			get_template_part( 'content-templates/content', 'link' );
+		}
+	// End the loop.
+	endwhile;
+	
+// If no content, include the "No posts found" template.
+else :
+	get_template_part( 'content', 'none' );
 
-					echo '<div class="fixed previous">';
-					previous_post_link('%link', '&larr; Older Post');
-					echo '</div>';
-				} else {
-					get_template_part( 'postformats/post', 'none' );
-				}
-			?>
+endif; 
 
-		</div>
-	</div>
-</div><!-- #content -->
 
-<?php get_footer(); ?>
+get_footer(); 
+
+?>

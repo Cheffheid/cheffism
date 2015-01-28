@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-	<div id="content" class="content main-wrap" itemscope itemtype="http://schema.org/Blog">
+	<div itemscope itemtype="http://schema.org/Blog">
 		<?php 
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 

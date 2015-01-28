@@ -46,21 +46,22 @@
 </head>
 	
 <body <?php body_class();  ?>>
-<div class="skip-link"><a href="#content" title="<?php esc_attr_e( 'Use this link to skip the header navigation', 'cheffism' ); ?>"><?php _e( 'Skip to content', 'cheffism' ); ?></a></div>
-<div id="page" class="hfeed page-wrapper">
 	<header id="branding" class="banner-header" role="banner">
-		<h1 id="site-title" class="site-title">
-			<?php bloginfo( 'name' ); ?>
-		</h1>
-		<div class="wrap">
-			<a href="#access" class="mobile-nav">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			<nav id="access" role="navigation" class="header-nav nav">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav' ) ); ?>
-			</nav><!-- #access -->
+		<div class="skip-link">
+			<a href="#content" title=""><?php _e( 'Skip to content', 'cheffism' ); ?></a>
 		</div>
+
+		<h1 id="site-title" class="site-title">
+			<a href="/"><?php bloginfo( 'name' ); ?></a>
+		</h1>
+		<a href="#access" class="mobile-nav">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</a>
+		<nav id="access" role="navigation" class="header-nav nav">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav' ) ); ?>
+		</nav><!-- #access -->
 	</header><!-- #branding -->
+	<main id="content" class="main-wrap" role="main">
