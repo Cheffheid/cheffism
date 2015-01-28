@@ -76,9 +76,14 @@ and (min-width : 321px) and (max-width : 650px) {
         width:12em;
     }
     .csstransforms3d.csstransitions {
-        .banner-header .wrap > .header-nav {
-            position: absolute;
+        .banner-header > .header-nav {
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+            position: fixed;
+            z-index: 4;
             height: 100%;
+            width: 170px;
             background: $highlight-colour;
             left: 0;
             margin: 0;
@@ -93,29 +98,32 @@ and (min-width : 321px) and (max-width : 650px) {
             -o-backface-visibility: hidden;
             backface-visibility: hidden;
         }
-        .page-wrapper {
-            left: 0 !important;
+        .active .banner-header > .header-nav {
             -webkit-transform: translate3d(0, 0, 0);
             -moz-transform: translate3d(0, 0, 0);
             -ms-transform: translate3d(0, 0, 0);
             -o-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-            -webkit-transition: -webkit-transform 500ms ease;
-            -moz-transition: -moz-transform 500ms ease;
-            -o-transition: -o-transform 500ms ease;
-            transition: transform 500ms ease;
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            -ms-backface-visibility: hidden;
-            -o-backface-visibility: hidden;
-            backface-visibility: hidden;
         }
-        .page-wrapper.active {
-            -webkit-transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
-            -moz-transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
-            -ms-transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
-            -o-transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
-            transform: translate3d(12em, 0, 0) scale3d(1, 1, 1);
+    }
+
+    .modal-bg {
+        background-color: rgba(0,0,0,0.5);
+        height: 100%;
+        left: 0;
+        opacity: 0.1;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+        z-index: 3;
+        position: fixed;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
         }
     }
 

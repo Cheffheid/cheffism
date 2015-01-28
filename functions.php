@@ -199,14 +199,26 @@ function cheffism_admin_bar_replace_howdy($wp_admin_bar) {
 }
 add_filter('admin_bar_menu', 'cheffism_admin_bar_replace_howdy', 25);
 
+// Add specific CSS class by filter
+add_filter( 'body_class', 'cheffism_add_body_classes' );
+function cheffism_add_body_classes( $classes ) {
+    $classes[] = 'page-wrapper';
+    return $classes;
+}
 
 // Mobile nav toggle script, inline because it's so small
 function cheffism_mobile_nav_js() { ?>
     <script async type="text/javascript">
         (function($){
-            $( '.mobile-nav' ).click(function() {
-                event.preventDefault();
-                $('.page-wrapper').toggleClass('active');
+            $('body').on('click', '.mobile-nav', function(e) {
+                e.preventDefault();
+                $('.page-wrapper').addClass('active');
+                $('.modal-bg').addClass('active');
+            });
+            $('body').on('click', '.modal-bg', function(e) {
+                e.preventDefault();
+                $('.page-wrapper').removeClass('active');
+                $('.modal-bg').removeClass('active');   
             });
         })(jQuery);
     </script>

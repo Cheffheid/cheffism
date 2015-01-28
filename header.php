@@ -45,7 +45,7 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 0.92 Feed for <?php bloginfo( 'name' ); ?>" href="<?php bloginfo('rss_url'); ?>" />
 </head>
 	
-<body <?php body_class();  ?>>
+<body <?php body_class(); ?>>
 	<header id="branding" class="banner-header" role="banner">
 		<div class="skip-link">
 			<a href="#content" title=""><?php _e( 'Skip to content', 'cheffism' ); ?></a>
