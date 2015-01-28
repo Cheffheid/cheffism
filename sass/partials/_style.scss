@@ -307,6 +307,39 @@ pre {
     margin-top: 1em;
 }
 
+
+/*
+ *
+ * Social media menu
+ *
+ */
+.social-menu {
+    list-style: none;
+    margin: 0 auto;
+    padding: 1em;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    
+    li {
+        display: inline-block;
+        margin-right: 3%;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        display: block;
+        line-height: 1;
+    }
+}
+
 .archives {
     .archive-list {
         margin-left: 0;
@@ -334,7 +367,6 @@ pre {
         }
     }
 }
-
 .page-title {
     margin: 0.25em 0;
 }
