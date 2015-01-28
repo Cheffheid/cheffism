@@ -15,13 +15,13 @@ html {
     overflow-y: scroll; 
 }
 
-/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a {
     @extend .animate;
     color: $base-link-colour;
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+
 
     &:hover, &:active, &:focus {
         text-decoration: none;
@@ -30,7 +30,20 @@ a {
     &:visited {
         @extend a;
     }
+
+/* Mark external links with a font awesome icon */
+    &[rel="external"]:after {
+        display: inline-block;
+        content: "\f08e";
+        font: normal normal normal 12px/1 FontAwesome;
+        margin-left: 5px; 
+    }
+
+    &:link { 
+        -webkit-tap-highlight-color: rgba(51,51,51,0.5); 
+    }
 }
+
 pre { 
   padding: 15px; 
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
@@ -44,21 +57,16 @@ textarea {
     overflow: auto; /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 }
 
-/* Mark external links with a font awesome icon */
-a[rel="external"]:after {
-    display: inline-block;
-    content: "\f08e";
-    font: normal normal normal 12px/1 FontAwesome;
-    margin-left: 5px;
-}
 
 /* align checkboxes, radios, text inputs with their label
    by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
-input[type="radio"] { 
-    vertical-align: text-bottom; 
-}
-input[type="checkbox"] { 
-    vertical-align: bottom; 
+input {
+    &[type="radio"] {
+        vertical-align: text-bottom;
+    }
+    &[type="checkbox"] {
+        vertical-align: bottom;
+    }
 }
 
 /* hand cursor on clickable input elements */
@@ -97,11 +105,6 @@ input:invalid, textarea:invalid {
     color:#fff; 
     text-shadow: none; 
 } 
-
-/*  j.mp/webkit-tap-highlight-color */
-a:link { 
-    -webkit-tap-highlight-color: rgba(51,51,51,0.5); 
-}
 
 /* make buttons play nice in IE:    
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
@@ -158,9 +161,11 @@ pre {
         }
     }
 }
+
 .banner-header {
     @extend .clearfix;
     background: $highlight-colour;
+    padding: 0 3%;
 
     .cell, .nav {
         float: right;
@@ -174,6 +179,7 @@ pre {
     margin: 0;
     color: #FFFFFF;
 }
+
 .site-title {
     line-height: 1.5;
     font-size: 26px;
@@ -212,7 +218,6 @@ pre {
 }
 
 .post-meta {
-
     time {
         display: block;
     }
@@ -257,8 +262,6 @@ pre {
 
 .comments {
     @extend .post;
-
-
 }
 
 .intro {
@@ -304,54 +307,6 @@ pre {
     margin-top: 1em;
 }
 
-
-/*
- *
- * Social media menu
- *
- */
-.social-menu {
-    list-style: none;
-    margin: 0 auto;
-    padding: 1em;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        display: inline-block;
-        margin-left: 5px;
-    }
-    
-    li {
-        display: inline-block;
-        margin-right: 3%;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    a {
-        display: block;
-        line-height: 1;
-
-        i {
-            @extend .animate;
-            font-size: 1.75em; 
-            color: #FFFFFF; 
-        }
-    
-        &:hover, &:focus {
-            .icon-feed { color: #FE9900; }
-            .fa-linkedin-square { color: #006599; }
-            .fa-github-square { color: #000000; }
-            .fa-twitter-square { color: #1BB2E9; }
-            .icon-lastfm { color: #D51008; }
-            .icon-google-plus { color: #DD4C39; }
-        }
-
-    }
-}
 .archives {
     .archive-list {
         margin-left: 0;
@@ -379,6 +334,7 @@ pre {
         }
     }
 }
+
 .page-title {
     margin: 0.25em 0;
 }
