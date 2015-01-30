@@ -50,7 +50,7 @@
 						$output .= '<a href="'
 								.get_category_link( $category->term_id )
 								.'" title="' 
-								. esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) 
+								. esc_attr( sprintf( __( "View all posts in %s", 'cheffism' ), $category->name ) ) 
 								. '">#'.$category->cat_name
 								.'</a>';
 					}

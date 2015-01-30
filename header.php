@@ -11,23 +11,11 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 
 <head>
+	<title><?php wp_title(); ?></title>
+
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-	<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-
-	wp_title();
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'cheffism' ), max( $paged, $page ) );
-
-	?></title>
-			
-	<meta name="author" content="Jeffrey de Wit">
+	<meta charset="utf-8">
+	
 	<!--  Mobile Viewport Fix -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     

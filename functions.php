@@ -52,6 +52,9 @@ function cheffism_setup() {
     add_theme_support( 'html5', array(
         'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
     ) );
+
+    add_theme_support( "title-tag" );
+
 }
 add_action( 'after_setup_theme', 'cheffism_setup' );
 
@@ -59,17 +62,11 @@ add_action( 'after_setup_theme', 'cheffism_setup' );
  * Frontend enqueues
  */
 function cheffism_frontend_scripts() {
-    // Workaround for Wordpress not recognising protocol relative URL's
-    $protocol = "http:";
-    if ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
-        $protocol = 'https:';
-    }
-
     // Fonts
-    wp_register_style( 'google-fonts', $protocol . '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
+    wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif:400,400italic,700italic', null, null, 'all');
     wp_enqueue_style('google-fonts');
 
-    wp_register_style( 'font-awesome', $protocol . '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', null, null, 'all');
+    wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', null, null, 'all');
     wp_enqueue_style('font-awesome');
 
     // Stylesheet
@@ -82,7 +79,7 @@ function cheffism_frontend_scripts() {
 
     // jQuery
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', $protocol . '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
+    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
     wp_enqueue_script( 'jquery' );
 }
 add_action('wp_enqueue_scripts', 'cheffism_frontend_scripts');
@@ -124,7 +121,7 @@ function cheffism_widgets_init() {
         'after_title' => '</h4>',
     ) );        
 }
-add_action( 'init', 'cheffism_widgets_init' );
+add_action( 'widgets_init', 'cheffism_widgets_init' );
 
 /**
  * asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
@@ -241,6 +238,23 @@ function cheffism_fix_skip_nav() { ?>
     </script>
 <?php }
 add_action('wp_footer', 'cheffism_fix_skip_nav', 999);
+
+/*
+ * Print the <title> tag based on what is being viewed.
+ */
+function cheffism_title_filter( $title, $sep ) {
+    global $page, $paged;
+
+    if ( is_feed() )
+        return $title;
+
+    // Add a page number if necessary:
+    if ( $paged >= 2 || $page >= 2 )
+        $title = $title . $sep . sprintf( __( 'Page %s', 'cheffism' ), max( $paged, $page ) );
+
+    return $title;
+}
+add_filter( 'wp_title', 'cheffism_title_filter', 10, 2 );
 
 /** Include Widgets, Shortcodes, Metaboxes */
 require_once(get_template_directory() . '/includes/metaboxes.php');

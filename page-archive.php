@@ -21,13 +21,13 @@ get_header(); ?>
 						<?php get_search_form(); ?>
 					</section>
 					<section id="archive-categories" class="clearfix">
-						<h2><?php _e('Posts by topic'); ?></h2>
+						<h2><?php _e('Posts by topic', 'cheffism'); ?></h2>
 						<ul class="archive-list">
 							<?php wp_list_categories('show_count=1&title_li=&hierarchical=0'); ?>
 						</ul>
 					</section>
 					<section id="archive-months" class="clearfix">
-						<h2><?php _e('Posts by month'); ?></h2>
+						<h2><?php _e('Posts by month', 'cheffism'); ?></h2>
 						<ul class="archive-list">
 							<?php wp_get_archives('show_post_count=true'); ?>
 						</ul>

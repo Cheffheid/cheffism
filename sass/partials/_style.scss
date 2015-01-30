@@ -1,5 +1,10 @@
 /* Because it's such an awesome feature */
-* { box-sizing: border-box; -moz-box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
    
 /*
  *
