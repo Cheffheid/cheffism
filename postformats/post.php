@@ -60,7 +60,9 @@
 				the_title_attribute( 'echo=0' )
 			);
 		?>
-		<p> <a href="<?php the_permalink();?>#comments"><?php _e('Leave a comment!', 'cheffism'); ?></a> </p>
+		<?php if (comments_open()) { ?>
+			<p> <a href="<?php the_permalink();?>#comments"><?php _e('Leave a comment!', 'cheffism'); ?></a> </p>
+		<?php } ?>	
 		<?php edit_post_link( __( 'Edit', 'cheffism' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-meta -->
