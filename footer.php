@@ -4,6 +4,7 @@
  * @subpackage Cheffism
  */
 ?>
+    </div>
         </main>
         <footer class="">
             <div class="wrap social-menu">
