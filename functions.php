@@ -43,11 +43,6 @@ function cheffism_setup() {
     // This theme supports editor styles
     add_editor_style("/css/layout-style.css");
 
-    // Add support for post formats
-    add_theme_support( 'post-formats', array(
-        'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-    ) );
-
     // Add HTML5 support
     add_theme_support( 'html5', array(
         'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
