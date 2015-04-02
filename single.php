@@ -78,6 +78,7 @@ get_header(); ?>
 						comments_template();
 					endif;
 				?>
+				<?php cheffism_post_footer(); ?>
 			<?php endwhile; // end of the loop. ?>
 				<nav id="nav-above" role="article">
 					<div class="fixed previous"><?php previous_post_link('%link', '&larr; Older Post'); ?></div>

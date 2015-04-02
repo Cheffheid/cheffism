@@ -206,5 +206,9 @@ function cheffism_title_filter( $title, $sep ) {
 }
 add_filter( 'wp_title', 'cheffism_title_filter', 10, 2 );
 
+function cheffism_post_footer() {
+    do_action('cheffism_post_footer');
+}
+
 /** Include Widgets, Shortcodes, Metaboxes */
 require_once(get_template_directory() . '/includes/metaboxes.php');
