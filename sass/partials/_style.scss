@@ -471,8 +471,14 @@ a.mobile-nav:active {
     margin-top: 4px;
 }
 
-.no-js .header-nav {
-    width: 100%;
+.no-js {
+
+    .header-nav {
+        width: 100%;
+    }
+    .mobile-nav {
+        display: none;
+    }
 }
 
 .menu {
