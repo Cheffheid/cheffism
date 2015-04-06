@@ -32,8 +32,8 @@ get_header(); ?>
 					get_template_part( 'postformats/post', 'none' );
 				}
 			?>
-
 		</div>
+		<?php cheffism_home_footer(); ?>
 	</div>
 </div><!-- #content -->
 

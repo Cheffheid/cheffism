@@ -43,10 +43,7 @@
 			<a href="/"><?php bloginfo( 'name' ); ?></a>
 		</h1>
 		<a href="#access" class="mobile-nav">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+			<span class="fa fa-bars"></span> <span>Menu</span>
 		</a>
 		<nav id="access" role="navigation" class="header-nav nav">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav' ) ); ?>

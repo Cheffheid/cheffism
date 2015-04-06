@@ -72,6 +72,10 @@ and (min-width : 321px) and (max-width : 650px) {
 }
 
 @media screen and (max-width: 767px) {
+    body {
+        padding-bottom: 4em;
+    }
+
     .header-nav {
         width:12em;
     }
@@ -82,28 +86,31 @@ and (min-width : 321px) and (max-width : 650px) {
             transition: all 0.2s linear;
             position: fixed;
             z-index: 4;
-            height: 100%;
             width: 170px;
             background: $highlight-colour;
-            left: 0;
-            margin: 0;
-            -webkit-transform: translate3d(-100%, 0, 0);
-            -moz-transform: translate3d(-100%, 0, 0);
-            -ms-transform: translate3d(-100%, 0, 0);
-            -o-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
+            left: 50%;
+            margin-left: -85px;
+            bottom: 1em;
+            padding-bottom: 2.5em;
             -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            -ms-backface-visibility: hidden;
-            -o-backface-visibility: hidden;
             backface-visibility: hidden;
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+            -webkit-transform-origin: 50% 100%;
+            -moz-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            -o-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
         }
         .active .banner-header > .header-nav {
-            -webkit-transform: translate3d(0, 0, 0);
-            -moz-transform: translate3d(0, 0, 0);
-            -ms-transform: translate3d(0, 0, 0);
-            -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
         }
     }
 
@@ -128,7 +135,8 @@ and (min-width : 321px) and (max-width : 650px) {
     }
 
     .site-title {
-        float: right;
+        width: 100%;
+        text-align: center;
         margin: 8px 0;
     }
 }

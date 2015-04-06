@@ -159,8 +159,8 @@ function cheffism_mobile_nav_js() { ?>
         (function($){
             $('body').on('click', '.mobile-nav', function(e) {
                 e.preventDefault();
-                $('.page-wrapper').addClass('active');
-                $('.modal-bg').addClass('active');
+                $('.page-wrapper').toggleClass('active');
+                $('.modal-bg').toggleClass('active');
             });
             $('body').on('click', '.modal-bg', function(e) {
                 e.preventDefault();
@@ -208,6 +208,10 @@ add_filter( 'wp_title', 'cheffism_title_filter', 10, 2 );
 
 function cheffism_post_footer() {
     do_action('cheffism_post_footer');
+}
+
+function cheffism_home_footer() {
+    do_action('cheffism_home_footer');
 }
 
 /** Include Widgets, Shortcodes, Metaboxes */

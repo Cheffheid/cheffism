@@ -269,21 +269,6 @@ pre {
     @extend .post;
 }
 
-.intro {
-    padding: 2em 0;
-    text-align: center;
-
-    h2 {
-        font-size: 2em;
-        margin: 0.25em 0;
-    }
-    p {
-        font-size: 1.15em;
-        margin: 0;
-        text-align: center;
-    }
-}
-
 .cat-links {
     position: absolute;
     top: 1em;
@@ -462,16 +447,18 @@ footer {
 }
 
 .mobile-nav {
-    position: relative;
-    float: left;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-right: 10px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    padding: 0.5em;
+    position: fixed;
+    bottom: 1em;
+    background: $highlight-colour;
+    z-index: 5;
+    right: 50%;
+    margin-right: -39px;
+    text-align: center;
+    color: #FFF;
+}
+a.mobile-nav:active {
+    color: #FFF;
 }
 .mobile-nav .icon-bar {
     display: block;
