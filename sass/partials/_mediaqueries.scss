@@ -139,6 +139,15 @@ and (min-width : 321px) and (max-width : 650px) {
         text-align: center;
         margin: 8px 0;
     }
+
+    .no-js {
+        .header-nav {
+            width: 100%;
+        }
+        .mobile-nav {
+            display: none;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {
