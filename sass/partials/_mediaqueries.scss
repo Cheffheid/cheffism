@@ -104,6 +104,7 @@ and (min-width : 321px) and (max-width : 650px) {
             -ms-transform-origin: 50% 100%;
             -o-transform-origin: 50% 100%;
             transform-origin: 50% 100%;
+            box-shadow: 0 0 4px rgba(0,0,0,.3),0 4px 8px rgba(0,0,0,.4);
         }
         .active .banner-header > .header-nav {
             -webkit-transform: scale(1);
@@ -111,6 +112,10 @@ and (min-width : 321px) and (max-width : 650px) {
             -ms-transform: scale(1);
             -o-transform: scale(1);
             transform: scale(1);
+        }
+
+        .active .mobile-nav {
+            box-shadow: none;
         }
     }
 
