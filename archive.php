@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-		<section id="primary" role="region">
+		<div id="primary" role="region">
 			<div id="content" class="page-wrap">
 
 				<header>
@@ -19,6 +19,6 @@ get_header(); ?>
 				<?php get_template_part( 'loop', 'category' ); ?>
 
 			</div><!-- #content -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 
 <?php get_footer(); ?>

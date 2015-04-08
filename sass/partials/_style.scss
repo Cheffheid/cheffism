@@ -167,6 +167,14 @@ pre {
     }
 }
 
+.material-block {
+    margin: 1em auto;
+    background: #FFF;
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    padding: 1em;
+}
+
 .banner-header {
     @extend .clearfix;
     background: $highlight-colour;
@@ -241,13 +249,9 @@ pre {
 }
 
 .post {
-    margin: 1em auto;
-    background: #FFF;
-    border: 1px solid #EEE;
-    border-radius: 3px;
+    @extend .material-block;
     position: relative;
     float: none;
-    padding: 1em;
 
     > a {
         display: block;

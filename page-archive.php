@@ -9,17 +9,12 @@
 get_header(); ?>
 
 		<div id="primary" class="main-wrap">
-			<div id="content" class="archives page-wrap post">
+			<div class="material-block">
+				<?php get_search_form(); ?>
+			</div>
+			<div id="content" class="archives page-wrap material-block">
 
 				<article>
-					<?php if( is_month() || is_year() ) : ?>
-					
-						<?php get_template_part( 'loop', 'archives' ); ?>
-					
-					<?php else : ?>
-					<section id="search-archives">
-						<?php get_search_form(); ?>
-					</section>
 					<section id="archive-categories" class="clearfix">
 						<h2><?php _e('Posts by topic', 'cheffism'); ?></h2>
 						<ul class="archive-list">
@@ -34,8 +29,6 @@ get_header(); ?>
 					</section>
 				</article>
 
-				<?php endif; ?>
-				
 			</div><!-- #content -->
 		</div><!-- #primary -->
 

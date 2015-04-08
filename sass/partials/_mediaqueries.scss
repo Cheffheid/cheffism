@@ -156,7 +156,10 @@ and (min-width : 321px) and (max-width : 650px) {
 }
 
 @media screen and (min-width: 768px) {
-    .post, .banner-header .wrap, footer .wrap {
+    .post, 
+    .banner-header .wrap, 
+    footer .wrap,
+    .material-block {
         max-width: 720px;
     }
     .previous, .next {
@@ -165,7 +168,8 @@ and (min-width : 321px) and (max-width : 650px) {
     .mobile-nav {
         display: none;
     }
-    .post {
+    .post,
+    .material-block {
         padding: 2em;
     }
 
@@ -204,10 +208,15 @@ and (min-width : 321px) and (max-width : 650px) {
         max-width: 885px;
         margin: 0 auto;
     }
-    .post, .page-wrap, .banner-header .wrap, footer .wrap {
+    .post, 
+    .page-wrap, 
+    .banner-header .wrap, 
+    footer .wrap,
+    .material-block {
         max-width: 885px;
     }
-    .post {
+    .post,
+    .material-block {
         font-size: 1.125em;
         line-height: 1.8125;
     }
