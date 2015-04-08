@@ -9,7 +9,8 @@
 get_header(); ?>
 
 		<div id="primary" class="main-wrap">
-			<div class="material-block">
+			<div class="material-block text-center">
+				<h2 class="sr-only"><?php _e('Search', 'cheffism'); ?></h2>
 				<?php get_search_form(); ?>
 			</div>
 			<div id="content" class="archives page-wrap material-block">

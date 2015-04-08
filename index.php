@@ -25,9 +25,13 @@ get_header(); ?>
 					get_template_part( 'postformats/post', get_post_format() );
 					
 					endwhile;
-					echo '<div class="fixed previous">';
-					previous_post_link('%link', '&larr; Older Post');
-					echo '</div>';
+			?>
+			<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
+				<div class="fixed previous">
+					<?php previous_post_link('%link', '&larr; Older Post'); ?>
+				</div>
+			</nav>
+			<?php
 				} else {
 					get_template_part( 'postformats/post', 'none' );
 				}

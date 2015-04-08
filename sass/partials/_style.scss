@@ -495,15 +495,15 @@ footer {
         padding: 0.25em
     }
 }
-.previous.fixed,
-.next.fixed {
+.previous,
+.next {
     display: block;
     position: relative;
 }
-.previous.fixed {
+.previous {
     float: left;
 }
-.next.fixed {
+.next {
     float: right;
 }
 .content {

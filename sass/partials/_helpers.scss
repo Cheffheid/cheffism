@@ -58,16 +58,20 @@
 }
 
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.cf:before,
+.cf:after {
     content: " ";
     display: table;
 }
 
-.clearfix:after {
+.clearfix:after,
+.cf:after {
     clear: both;
 }
 
-.clearfix {
+.clearfix,
+.cf {
     *zoom: 1;
 }
 
@@ -108,4 +112,12 @@ blockquote.alignright,
 figure.wp-caption.alignright, 
 img.alignright {
     margin: 7px -14px 7px 14px
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.text-center {
+    text-align: center;
 }

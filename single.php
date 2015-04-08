@@ -80,7 +80,7 @@ get_header(); ?>
 				?>
 				<?php cheffism_post_footer(); ?>
 			<?php endwhile; // end of the loop. ?>
-				<nav id="nav-above" role="article">
+				<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
 					<div class="fixed previous"><?php previous_post_link('%link', '&larr; Older Post'); ?></div>
 					<div class="fixed next"><?php next_post_link('%link', 'Newer Post &rarr;'); ?></div>
 				</nav><!-- #nav-above -->

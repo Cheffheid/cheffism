@@ -87,7 +87,7 @@
 
 	<?php /* Show page navigation when applicable */ ?>
 	<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="nav-above" role="article">
+		<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
 			<div class="fixed previous"><?php next_posts_link( __( '&larr; Older posts', 'cheffism' ) ); ?></div>
 			<div class="fixed next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'cheffism' ) ); ?></div>
 		</nav><!-- #nav-above -->

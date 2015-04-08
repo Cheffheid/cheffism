@@ -25,4 +25,9 @@ get_header(); ?>
 
 	</div><!-- #content -->
 
+	<div class="material-block text-center">
+		<h2 class="sr-only"><?php _e('Search', 'cheffism'); ?></h2>
+		<?php get_search_form(); ?>
+	</div>
+
 <?php get_footer(); ?>

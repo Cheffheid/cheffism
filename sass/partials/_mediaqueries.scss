@@ -201,6 +201,12 @@ and (min-width : 321px) and (max-width : 650px) {
     .next {
         right: 10px;
     }
+
+    .fixed-post-nav {
+        padding: 0;
+        border: none;
+        margin: 0;
+    }
 }
 
 @media (min-width:1200px) {
