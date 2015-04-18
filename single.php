@@ -45,13 +45,16 @@ get_header(); ?>
 						<?php
 							$tag_list = get_the_tag_list( '', ', ' );
 							$category = get_the_category();
-							
-							if ( $category[0]->name == 'Uncategorized' ) {
-								$utility_text = __( 'This post is', 'cheffism' );
-								$utility_text .= ' <span itemprop="about">%1$s</span> ';
-							} else {
-								$utility_text = __( 'It\'s probably about', 'cheffism' );
-								$utility_text .= ' <span itemprop="about">%1$s</span> ';
+							$utility_text = '';
+
+							if ( !empty($category) ) {
+								if ( $category[0]->name == 'Uncategorized' ) {
+									$utility_text .= __( 'This post is', 'cheffism' );
+									$utility_text .= ' <span itemprop="about">%1$s</span> ';
+								} else {
+									$utility_text = __( 'It\'s probably about', 'cheffism' );
+									$utility_text .= ' <span itemprop="about">%1$s</span> ';
+								}
 							}
 
 							
