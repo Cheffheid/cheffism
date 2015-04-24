@@ -11,9 +11,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 
 <head>
-	<title><?php wp_title(); ?></title>
-
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
 	
 	<!--  Mobile Viewport Fix -->
@@ -42,7 +40,7 @@
 		<h1 id="site-title" class="site-title">
 			<a href="/"><?php bloginfo( 'name' ); ?></a>
 		</h1>
-		<button href="#access" class="mobile-nav">
+		<button class="mobile-nav">
 			<span class="fa fa-bars"></span> <span><?php echo __('Menu', 'cheffism'); ?></span>
 		</button>
 		<nav id="access" role="navigation" class="header-nav nav">

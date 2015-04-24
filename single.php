@@ -7,8 +7,6 @@
 get_header(); ?>
 
 		<div id="primary">
-			<div id="content" class="content main-wrap">
-
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(get_post_meta(get_the_ID(), 'article_class', true)); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 					<header class="entry-header">
@@ -83,11 +81,10 @@ get_header(); ?>
 				?>
 				<?php cheffism_post_footer(); ?>
 			<?php endwhile; // end of the loop. ?>
-				<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
-					<div class="fixed previous"><?php previous_post_link('%link', '&larr; Older Post'); ?></div>
-					<div class="fixed next"><?php next_post_link('%link', 'Newer Post &rarr;'); ?></div>
-				</nav><!-- #nav-above -->
-			</div><!-- #content -->	
+			<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
+				<div class="fixed previous"><?php previous_post_link('%link', '&larr; Older Post'); ?></div>
+				<div class="fixed next"><?php next_post_link('%link', 'Newer Post &rarr;'); ?></div>
+			</nav><!-- #nav-above -->
 		</div><!-- #primary -->
 
 <?php get_footer(); ?>
