@@ -25,7 +25,7 @@ get_header(); ?>
 				
 				endwhile;
 		?>
-		<nav id="nav-above" role="article" class="material-block cf fixed-post-nav">
+		<nav id="nav-above" class="material-block cf fixed-post-nav">
 			<div class="fixed previous">
 				<?php previous_post_link('%link', '&larr; Older Post'); ?>
 			</div>
