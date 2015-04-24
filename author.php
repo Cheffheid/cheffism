@@ -7,7 +7,6 @@
 get_header(); ?>
 
 		<section id="primary" role="region">
-			<div id="content" class="page-wrap">
 
 				<?php the_post(); ?>
 
@@ -18,8 +17,7 @@ get_header(); ?>
 				<?php rewind_posts(); ?>
 
 				<?php get_template_part( 'loop', 'author' ); ?>
-
-			</div><!-- #content -->
+				
 		</section><!-- #primary -->
 
 <?php get_footer(); ?>
