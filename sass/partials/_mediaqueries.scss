@@ -183,6 +183,17 @@ and (min-width : 321px) and (max-width : 650px) {
     .site-title {
         margin: 0;
     }
+
+    .project-featured-thumb {
+        width: auto;
+    }
+
+    .project-featured-thumb + .entry-summary {
+        display: inline-block;
+        vertical-align: middle;
+        width: 47%;
+        padding-left: 5%;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -238,5 +249,8 @@ and (min-width : 321px) and (max-width : 650px) {
         img {
             margin-top: 10px;
         }
+    }
+    .project-featured-thumb + .entry-summary {
+        width: 55%;
     }
 }

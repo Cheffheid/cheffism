@@ -173,6 +173,10 @@ pre {
     border: 1px solid #EEE;
     border-radius: 3px;
     padding: 1em;
+
+    h2 {
+        margin: 0;
+    }
 }
 
 .banner-header {
@@ -519,4 +523,22 @@ footer {
 .read-more {
     display: inline-block;
     margin-top: 1em;
+}
+
+.project-featured-thumb {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.project-featured-thumb + .entry-summary {
+    width: 100%;
+}
+
+.project-featured-img {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
 }
