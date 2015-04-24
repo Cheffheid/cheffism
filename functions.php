@@ -155,7 +155,7 @@ function cheffism_add_body_classes( $classes ) {
 
 // Mobile nav toggle script, inline because it's so small
 function cheffism_mobile_nav_js() { ?>
-    <script async type="text/javascript">
+    <script type="text/javascript">
         (function($){
             $('body').on('click', '.mobile-nav', function(e) {
                 e.preventDefault();
@@ -174,7 +174,7 @@ add_action('wp_footer', 'cheffism_mobile_nav_js', 999);
 
 // Minor Skip Nav link focus fix, adds focus to target element so keyboard wielders can continue from there
 function cheffism_fix_skip_nav() { ?>
-    <script async type="text/javascript">
+    <script type="text/javascript">
         window.addEventListener("hashchange", function(event) {
             var element = document.getElementById(location.hash.substring(1));
 
