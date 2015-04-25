@@ -69,6 +69,16 @@ and (min-width : 321px) and (max-width : 650px) {
             display: none;
         }
     }
+
+    ul.inline {
+        margin-top: 0;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -185,7 +195,7 @@ and (min-width : 321px) and (max-width : 650px) {
     }
 
     .project-featured-thumb {
-        width: auto;
+        width: 44%;
     }
 
     .project-featured-thumb + .entry-summary {

@@ -30,7 +30,6 @@
 				<span class="fn">
 					<?php the_author_link(); ?>
 				</span>
-				<link rel="author" href="https://plus.google.com/u/0/+JeffreydeWitCheff"/>
 			</span>
 		</div><!-- .entry-meta -->
 
