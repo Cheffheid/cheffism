@@ -1,0 +1,71 @@
+textarea { 
+    overflow: auto; /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+}
+
+/* align checkboxes, radios, text inputs with their label
+   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input {
+    &[type="radio"] {
+        vertical-align: text-bottom;
+    }
+    &[type="checkbox"] {
+        vertical-align: bottom;
+    }
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { 
+    cursor: pointer; 
+}
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */  
+button, input, select, textarea { 
+    margin: 0; 
+}
+
+/* colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { 
+    border-radius: 1px;
+    @include shadow(false, 0, 0, 5px, red);
+}
+
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid { 
+    background-color: #f0dddd; 
+}
+
+/* make buttons play nice in IE:    
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+    width: auto; 
+    overflow: visible;
+}
+
+input,
+textarea {
+    padding: 0.25em;
+    border-style: solid;
+    border-width: 1px;  
+    border-color: #A9A9A9;
+
+    &:focus {
+        outline: none;
+        border-color: $link-highlight-colour;
+    }
+}
+
+.entry-content .textarea-wrap textarea {
+    height: 6em;
+}
+
+.textarea-wrap textarea.expand,
+textarea.expand {
+    @extend .animate;
+
+    height: 2em;
+
+    &:focus {
+        height: 6em;
+    }
+}

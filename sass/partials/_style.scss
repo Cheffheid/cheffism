@@ -58,44 +58,6 @@ pre {
   word-wrap: break-word; /* IE */
 }
 
-textarea { 
-    overflow: auto; /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
-}
-
-
-/* align checkboxes, radios, text inputs with their label
-   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
-input {
-    &[type="radio"] {
-        vertical-align: text-bottom;
-    }
-    &[type="checkbox"] {
-        vertical-align: bottom;
-    }
-}
-
-/* hand cursor on clickable input elements */
-label, input[type=button], input[type=submit], button { 
-    cursor: pointer; 
-}
-
-/* webkit browsers add a 2px margin outside the chrome of form elements */  
-button, input, select, textarea { 
-    margin: 0; 
-}
-
-/* colors for form validity */
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid { 
-    border-radius: 1px;
-    @include shadow(false, 0, 0, 5px, red);
-}
-
-.no-boxshadow input:invalid, 
-.no-boxshadow textarea:invalid { 
-    background-color: #f0dddd; 
-}
-
 /* These selection declarations have to be separate.
    No text-shadow: twitter.com/miketaylr/status/12228805301 
 */
@@ -111,12 +73,6 @@ input:invalid, textarea:invalid {
     text-shadow: none; 
 } 
 
-/* make buttons play nice in IE:    
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {
-    width: auto; 
-    overflow: visible;
-}
 
 blockquote, q {
     quotes: none;
@@ -353,17 +309,6 @@ pre {
             margin: 0;
         }
     }
-    .searchform {
-        text-align: center;
-
-        label {
-            font-size: 2em;
-            line-height: 1;
-        }
-        input {
-            height: 46px;
-        }
-    }
 }
 .page-title {
     margin: 0.25em 0;
@@ -379,73 +324,6 @@ footer {
     @extend .clearfix;
 }
 
-.frm_form_fields {
-    fieldset {
-        padding: 0 0.625em 0;
-    }
-}
-
-.gform_fields {
-    margin-left: 0;
-    padding: 0 0.625em 0;
-}
-
-.gfield {
-    margin-bottom: 1em;
-    width: 100%;
-    list-style: none;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-    label {
-        padding: 0;
-        font-weight: bold;
-        display: block;
-    }
-    .validation_message {
-        color: #a94442;
-        font-size: 0.75em;
-    }
-    input, textarea {
-        width: 100%;
-    }
-    textarea {
-        max-height: 120px;
-    }
-}
-.gform_validation_container {
-    display: none;
-}
-.gform_footer {
-    padding: 0 0.625em 0;
-
-    input, img {
-        float: right;
-        padding: 0.25em 1.5em;
-        margin: 0;
-    }
-    img {
-        float: left;
-        margin-left: 5px;
-    }
-    input {
-        -webkit-transition: background-color 0.25s linear;
-        -moz-transition: background-color 0.25s linear;
-        -ms-transition: background-color 0.25s linear;
-        -o-transition: background-color 0.25s linear;
-        transition: background-color 0.25s linear;
-    
-        &:hover,
-        &:focus {
-            background: $highlight-colour;
-            color: #FFFFFF;
-        }
-    }
-}
-.validation_error {
-    display: none;
-}
 .alternative {
     margin: 0.5em 0;
     img {

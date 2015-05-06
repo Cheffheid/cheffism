@@ -1,0 +1,24 @@
+input[type="submit"],
+button, 
+.btn {
+    @extend .animate;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.25em 0.5em;
+    display: inline-block;
+    background-color: $highlight-colour;
+    border-color: $highlight-colour;
+    color: #FFFFFF;
+
+    &:hover,
+    &:focus {
+        background-color: $link-highlight-colour;
+        border-color: $link-highlight-colour; 
+    }
+}

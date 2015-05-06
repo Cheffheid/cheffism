@@ -67,12 +67,12 @@ function cheffism_frontend_scripts() {
 
     // modernizr-js
     wp_register_script( 'modernizr-js', get_template_directory_uri() . '/js/Modernizr.min.js', null, null, true );
-    wp_enqueue_Script( 'modernizr-js' );
+    wp_enqueue_script( 'modernizr-js' );
 
-    // jQuery
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, null, true);
-    wp_enqueue_script( 'jquery' );
+    // modernizr-js
+    wp_register_script( 'site-js', get_template_directory_uri() . '/js/site.js', array('jquery'), null, true );
+    wp_enqueue_script( 'site-js' );
+
 }
 add_action('wp_enqueue_scripts', 'cheffism_frontend_scripts');
 
@@ -152,42 +152,6 @@ function cheffism_add_body_classes( $classes ) {
     $classes[] = 'page-wrapper';
     return $classes;
 }
-
-// Mobile nav toggle script, inline because it's so small
-function cheffism_mobile_nav_js() { ?>
-    <script type="text/javascript">
-        (function($){
-            $('body').on('click', '.mobile-nav', function(e) {
-                e.preventDefault();
-                $('.page-wrapper').toggleClass('active');
-                $('.modal-bg').toggleClass('active');
-            });
-            $('body').on('click', '.modal-bg', function(e) {
-                e.preventDefault();
-                $('.page-wrapper').removeClass('active');
-                $('.modal-bg').removeClass('active');   
-            });
-        })(jQuery);
-    </script>
-<?php }
-add_action('wp_footer', 'cheffism_mobile_nav_js', 999);
-
-// Minor Skip Nav link focus fix, adds focus to target element so keyboard wielders can continue from there
-function cheffism_fix_skip_nav() { ?>
-    <script type="text/javascript">
-        window.addEventListener("hashchange", function(event) {
-            var element = document.getElementById(location.hash.substring(1));
-
-            if (element) {
-                if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
-                    element.tabIndex = -1;
-                }
-                element.focus();
-            }
-        }, false);
-    </script>
-<?php }
-add_action('wp_footer', 'cheffism_fix_skip_nav', 999);
 
 /*
  * Print the <title> tag based on what is being viewed.
