@@ -233,6 +233,13 @@ pre {
     @extend .post;
 }
 
+.comment-form {
+    label {
+        display: block;
+        font-weight: bold;
+    }
+}
+
 .cat-links {
     position: absolute;
     top: 1em;
